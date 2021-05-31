@@ -1,0 +1,5 @@
+@media screen and (max-width: 531px) {
+    .ordering { display: flex; flex-flow: column; }
+    .order__1 { order: 2; }
+    .order__2 { order: 1;  }
+}

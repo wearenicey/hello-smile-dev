@@ -1,0 +1,13 @@
+{
+  "current": {
+    "checkout_header_image": "shopify:\/\/shop_images\/formula-desktop.jpg",
+    "checkout_logo_image": "shopify:\/\/shop_images\/hellosmile-logo.png",
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}

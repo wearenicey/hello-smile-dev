@@ -1,0 +1,103 @@
+<div class="container margin-top-xl max-width-adaptive-lg">
+  <div class="margin-bottom-md">
+	<h1 class="text-center">Paketi</h1>
+  </div>
+  <div class="carousel carousel-v2 flex flex-column js-carousel" data-drag="on" data-loop="off" data-navigation="on"
+	   data-navigation-class="carousel-v2__navigation" data-navigation-item-class="carousel-v2__navigation-item"
+	   data-autoplay="on">
+	<p class="sr-only">Carousel items</p>
+	<div class="carousel__wrapper position-relative overflow-hidden ">
+	  <ol class="carousel__list items-center">
+		{% assign _collection = collections['new-products'] %}
+		{% for product in collections[section.settings.feature_collection].products %}
+		  <li class="carousel__item">
+
+			<div class="prod-card ">
+
+			  <span class="prod-card__badge" role="text">10% ušteda <i class="sr-only">product</i></span>
+			  <a class="prod-card__img-link" href="{{ product.url | within: collection }}"
+				 aria-label="Description of the link">
+				<figure class="prod-card__img ">
+				  <img src="{{ product.featured_image.src | img_url: 'master' }}"
+					   alt="Product preview image">
+				</figure>
+			  </a>
+			  <div class="padding-sm text-center">
+				<h3><a class="color-inherit" href="{{ product.url | within: collection }}">
+					{{ product.title }}</a></h3>
+
+				<div class="margin-top-xs">
+				  <span class="prod-card__price">{{ product.price | money }}</span>
+				</div>
+
+			  </div>
+
+			</div>
+			<form enctype="multipart/form-data" class="test"
+				  id="add-to-cart-{{ product.handle }}-{{ collection.handle }}-{{ section.id }}">
+			  {% if product.options.size > 1 %}
+				...
+				<input type="radio" value="{{ variant.id }}" name="id" {% if
+						variant.id==product.selected_or_first_available_variant.id %} checked{% endif %}>
+				<label>{{ variant.title }} for {{ product.price | minus: variant.price | money_with_currency
+				  }}</label>
+
+				...
+			  {% else %}
+				<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+			  {% endif %}
+
+			  <input type='hidden' name='quantity' value='1'>
+			  <button
+					  class=" js-go-cart-add-to-cart single-product__add-to-cart u-b6  btn btn--primary width-100% text-center"
+					  type="submit" name="add" data-add-to-cart {% unless current_variant.available %} {%
+					  endunless %}>
+				Dodaj u korpu
+
+
+			  </button>
+
+			</form>
+		  </li>
+		{%- endfor -%}
+	  </ol>
+	  <nav class="no-js:is-hidden">
+		<ul
+				class="position-absolute top-0 left-0 bottom-0 right-0 pointer-events-none flex items-center justify-between">
+		  <li>
+			<button class="reset carousel-v2__control carousel-v2__control--prev js-carousel__control js-tab-focus">
+			  <svg class="icon" viewBox="0 0 20 20">
+				<title>Show previous items</title>
+				<polyline points="13 18 5 10 13 2" fill="none" stroke="currentColor"
+						  stroke-miterlimit="10" stroke-width="2"/>
+			  </svg>
+			</button>
+		  </li>
+
+		  <li>
+			<button
+					class="reset carousel-v2__control carousel-v2__control--next js-carousel__control js-tab-focus">
+			  <svg class="icon" viewBox="0 0 20 20">
+				<title>Show next items</title>
+				<polyline points="7 18 15 10 7 2" fill="none" stroke="currentColor"
+						  stroke-miterlimit="10" stroke-width="2"/>
+			  </svg>
+			</button>
+		  </li>
+		</ul>
+	  </nav>
+	</div>
+  </div>
+</div>
+{% schema %}
+{
+"name": "Slideshow",
+"settings": [
+{
+"type": "collection",
+"id": "feature_collection",
+"label": "Chose Collection to show on slideshow"
+}
+]
+}
+{% endschema %}

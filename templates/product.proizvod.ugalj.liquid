@@ -1,0 +1,584 @@
+{% comment %} START Sticky Bar Cart {% endcomment %}
+<div
+	class="sticky-banner sticky-banner--bottom bg-white bg-opacity-80% backdrop-blur-10 color-bg js-sticky-banner padding-y-xs padding-y-xs@md padding-x-xs padding-x-md@md"
+	data-target-in="#sticky-bar-cart">
+	<!--👇 sticky banner content -->
+	<div class="flex gap-xs flex-row items-center justify-between">
+		<div class="flex items-center">
+			<img loading="lazy" data-src="{{ 'proizvod-ugalj-bar.png' | asset_url }}"
+				src="{{ 'proizvod-ugalj-bar.png' | asset_url }}" class="margin-right-xxs margin-right-xs@md display@md" alt="">
+			<h3 class="margin-left-0 margin-bottom-0 display@md">{{ product.title }}</h3>
+			<h3 class="margin-right-xxs margin-bottom-0 hide@md">{{ product.price | money }}</h3>
+		</div>
+		<div class="flex items-center">
+			<h3 class="margin-right-xxs margin-bottom-0 display@md">{{ product.price | money }}</h3>
+			<a class="ugalj-baner btn btn--primary padding-x-md@md" @click="addUgaljBaner()" aria-controls="cart-drawer-1">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+					class="margin-right-xxxs margin-right-xxs@md">
+					<title>Dodaj u korpu</title>
+					<g>
+						<path fill="#ffffff"
+							d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19zM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74A3.007 3.007 0 0 0 3.92 3H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7zM16.5 19a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5z">
+						</path>
+					</g>
+				</svg>
+				Dodaj u korpu
+			</a>
+		</div>
+	</div>
+</div>
+
+{% comment %} Product Images Mobile {% endcomment %}
+<section class="position-relative hide@md" style="margin-top: 70px;">
+	<div class="max-width-adaptive-lg height-100vh flex">
+		<div class="max-width-xs position-absolute padding-x-sm top-0 width-100%" style="padding-top: 80px;">
+
+			<div class="text-component margin-bottom-sm text-center">
+				<h1 class="text-xl color-white">{{ product.title }}</h1>
+			</div>
+
+			<a class="ugalj-mobile btn btn--primary flex flex-grow" @click="addUgaljMobile()" aria-controls="cart-drawer-1">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="margin-right-xxs">
+					<title>Dodaj u korpu</title>
+					<g>
+						<path fill="#ffffff"
+							d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19zM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74A3.007 3.007 0 0 0 3.92 3H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7zM16.5 19a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5z">
+						</path>
+					</g>
+				</svg>
+				Dodaj u korpu</a>
+		</div>
+
+		<img loading="lazy" data-src="{{ 'single-ugalj-01-mobile.jpg' | asset_url }}"
+			src="{{ 'single-ugalj-01-mobile.jpg' | asset_url }}" class="width-100%" alt="">
+
+	</div>
+</section>
+
+
+{% comment %} START Proizvod {% endcomment %}
+<section class="position-relative z-index-2 bg">
+	<!-- your content here -->
+	<section id="product-mobile" class="product-v3 padding-bottom-xs padding-top-lg@md js-product-v3">
+
+		{% comment %} START About {% endcomment %}
+		<div class="container max-width-adaptive-xl" id="sticky-bar-cart">
+			<div class="grid gap-sm gap-lg@md">
+				<div class="col-12 col-6@md col-7@xl min-width-0">
+
+					{% comment %} Product Images Desktop {% endcomment %}
+					<div class="flex flex-column display@md">
+						{% for image in product.images %}
+						<img class="block width-100%" loading="lazy" data-src="{{ image.src | product_img_url: 'master' }}"
+							src="{{ image.src | product_img_url: 'master' }}" alt="Image description">
+						{% endfor %}
+					</div>
+				</div>
+
+				<div class="col-12 col-6@md col-5@xl padding-top-0@md">
+					<div class="product-v3__panel">
+						<div class="padding-bottom-xxs">
+							<h1 class="text-lg text-xxl@md font-bold">{{ product.title }}</h1>
+						</div>
+						<div class="flex items-center padding-bottom-md padding-bottom-md@md">
+							<p class="text-xl color-primary">{{ product.price | money }}</p>
+
+						</div>
+
+						{% form 'product', product, data-product-form: '', data-product-handle: product.handle,
+						data-enable-history-state: 'true' %}
+
+
+						{% if product.options.size > 1 %}
+						...
+						<input type="radio" v-model="form.id" id="variant_id" value="{{ variant.id }}" name="id" {% if
+							variant.id==product.selected_or_first_available_variant.id %} checked{% endif %}>
+						<label>{{ variant.title }} for {{ product.price | minus: variant.price | money_with_currency
+							}}</label>
+
+						...
+						{% else %}
+						<input type="hidden" name="id" v-model="form.id" id="variant_id"
+							value="{{ product.selected_or_first_available_variant.id }}">
+						{% endif %}
+
+						<div class="flex flex-column flex-row@sm gap-xxs js-product-v3__cta padding-top-0@md">
+							<div class="number-input number-input--v2 js-number-input display@md" id="counter">
+								<input class="form-control js-number-input__value " type="number" v-model="form.quantity"
+									name="qty-input-2" id="qty-input-2" min="0" max="10" step="1">
+								<button class="reset number-input__btn number-input__btn--plus " aria-label="Increase Number"
+									type="button" @click="incrementValue">
+									<svg class="icon" viewBox="0 0 12 12" aria-hidden="true">
+										<path d="M11,5H7V1A1,1,0,0,0,5,1V5H1A1,1,0,0,0,1,7H5v4a1,1,0,0,0,2,0V7h4a1,1,0,0,0,0-2Z" />
+									</svg>
+								</button>
+								<button class="reset number-input__btn number-input__btn--minus " aria-label="Decrease Number"
+									type="button" @click="decrementValue">
+									<svg class="icon" viewBox="0 0 12 12" aria-hidden="true">
+										<path d="M11,7H1A1,1,0,0,1,1,5H11a1,1,0,0,1,0,2Z" />
+									</svg>
+								</button>
+							</div>
+							<a class="btn  btn--primary flex-grow" aria-controls="cart-drawer" @click="addToCart" id="kec" name="add">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									class="margin-right-xxs">
+									<title>Dodaj u korpu</title>
+									<g>
+										<path fill="#ffffff"
+											d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19zM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74A3.007 3.007 0 0 0 3.92 3H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7zM16.5 19a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5z">
+										</path>
+									</g>
+								</svg>
+								Dodaj u korpu </a>
+						</div>
+
+						{% endform %}
+
+						<div class="text-component padding-top-sm padding-top-md@md padding-bottom-xs padding-bottom-sm@md">
+							<div class="flex">
+								<img src="{{ 'dostava.svg' | asset_url }}" class="icon--md" alt="" style="margin-right: 1rem;">
+								<p class="margin-bottom-0">Besplatna isporuka se vrši na teritoriji Srbije, Crne Gore, Hrvatske i Bosne
+									i Hercegovine, a za ostatak sveta dostava se naplaćuje 8 eura.</p>
+							</div>
+						</div>
+
+						<div class="text-component">
+							{{ product.description }}
+						</div>
+
+						<div class="padding-top-xs padding-top-sm@md">
+							<div class="parent grid gap-xs grid-md@md items-baseline">
+								<div class="col-6 col-3@md">
+									<div class="grid text-center">
+										<div class="col-12">
+											<img src="{{ 'icon-01.svg' | asset_url }}" class="icon--xxl hover:scale" alt="Image description">
+										</div>
+										<div class="col-12">
+											<p class="text-sm@md color-primary-dark">Prirodni sastojci</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-6 col-3@md">
+									<div class="grid text-center">
+										<div class="col-12">
+											<img src="{{ 'icon-02.svg' | asset_url }}" class="icon--xxl hover:scale" alt="Image description">
+										</div>
+										<div class="col-12">
+											<p class="text-sm@md color-primary-dark">Pogodno za osetljive zube i desni
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-6 col-3@md">
+									<div class="grid text-center">
+										<div class="col-12">
+											<img src="{{ 'icon-03.svg' | asset_url }}" class="icon--xxl hover:scale" alt="Image description">
+										</div>
+										<div class="col-12">
+											<p class="text-sm@md color-primary-dark">Klinički testirano</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-6 col-3@md">
+									<div class="grid text-center">
+										<div class="col-12">
+											<img src="{{ 'icon-04.svg' | asset_url }}" class="icon--xxl hover:scale" alt="Image description">
+										</div>
+										<div class="col-12">
+											<p class="text-sm@md color-primary-dark">Naučno dokazana PAP formula</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						{% comment %} START Accordion {% endcomment %}
+						<div class="parent grid-sm padding-top-sm padding-top-md@md">
+							<ul class="accordion-v2 flex flex-column gap-xxxs js-accordion" data-animation="on" data-multi-items="on"
+								data-version="v2">
+
+								<li class="accordion-v2__item bg shadow-sm radius-md  js-accordion__item">
+									<button class="reset accordion-v2__header padding-y-sm padding-x-md js-tab-focus" type="button">
+										<span class="">Kako svaki sastojak deluje?
+										</span>
+
+										<svg class="icon accordion-v2__icon-arrow no-js:is-hidden" viewBox="0 0 16 16" aria-hidden="true">
+											<g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="square"
+												stroke-miterlimit="10">
+												<path d="M2 2l12 12" />
+												<path d="M14 2L2 14" />
+											</g>
+										</svg>
+									</button>
+
+									<div class="accordion-v2__panel js-accordion__panel">
+										<div class="text-component padding-top-xxxs padding-x-md padding-bottom-md">
+											<ol class="list list--ol">
+												<li>Cimet poseduje antibakterijsko svojstvo i uništava štetne bakterije koje se nalaze u ustima.
+												</li>
+												<li>Ulje mente:
+													Ova biljka se koristi u zubarskoj praksi kao lokalni antibakterijski agens, koji je koristan
+													protiv streptokoka i laktobacila.Takođe se koristi u hrani, pićima, lekovima protiv kašlja i
+													kozmetičkim kremama.
+												</li>
+												<li>Limunska mirta deluje umirujuće i dezinfekciono. Štiti sluzokožu usta i osetljive desni.
+												</li>
+												<li>Himalajska so beli zube i jača desni zahvaljujući visokom sadržaju kalijuma.
+												</li>
+												<li>Ulje smirne je odlično za nežne i upaljene desni, štiti sluzokožu i usporava nastanak
+													karijesa..
+												</li>
+											</ol>
+										</div>
+									</div>
+								</li>
+
+
+							</ul>
+						</div>
+						{% comment %} END Accordion {% endcomment %}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% comment %}START Premium {% endcomment %}
+	<div class="bg-white padding-top-lg padding-top-xxl@md">
+
+		<div class="immerse-section-tr padding-top-xs js-immerse-section-tr">
+			<div class="immerse-section-tr__media js-immerse-section-tr__media">
+				<div class="container max-width-sm">
+					<!-- asset visible on small devices -->
+					<figure
+						class="immerse-section-tr__figure immerse-section-tr__figure--3-4 hide@sm js-immerse-section-tr__figure">
+						{% comment %}<video src="{{ 'immersive-section-transition-video-1.mp4' | asset_url }}" autoplay loop muted{%
+							endcomment %} {% comment %}playsInline></video>{% endcomment %}
+						<img loading="lazy" data-src="{{ 'ugalj-devojka-mobile.jpg' | asset_url }}"
+							src="{{ 'ugalj-devojka-mobile.jpg' | asset_url }}" class="width-100%" alt="">
+					</figure>
+					<!-- asset visible on bigger devices -->
+					<figure
+						class="immerse-section-tr__figure immerse-section-tr__figure--16-9 display@sm js-immerse-section-tr__figure">
+						{% comment %}<video src="{{ 'immersive-section-transition-video-2.mp4' | asset_url }}" autoplay loop muted{%
+							endcomment %} {% comment %}playsInline></video>{% endcomment %}
+						<img loading="lazy" data-src="{{ 'ugalj-devojka.jpg' | asset_url }}"
+							src="{{ 'ugalj-devojka.jpg' | asset_url }}" class="width-100%" alt="">
+					</figure>
+				</div>
+			</div>
+
+			<section class="immerse-section-tr__content bg-transparent margin-top-lg js-immerse-section-tr__content">
+				<!-- your content here -->
+
+				<div class="container max-width-adaptive-sm margin-bottom-xxl margin-bottom-xxxl@md">
+					<div class="text-component line-height-lg v-space-md padding-top-lg padding-top-0@md">
+						<h1 class="text-xl text-xxl@md font-bold">Premium kvalitet</h1>
+						<p class="text-md text-lg@md">Formula je obogaćena 100% prirodnim sastojcima koji pospešuju
+							efekat beljenja i pružaju zaštitu zuba i desni.</p>
+					</div>
+				</div>
+
+				<section class="bg-rozika padding-y-md padding-y-lg@md position-relative z-index-1">
+					<div class="container max-width-adaptive-xl">
+						<div class="grid gap-md items-center">
+							<div class="col-5@md order-2 order-1@md">
+								<div class="text-component">
+									<h2 class="padding-bottom-sm">
+										Kako se koristi <span class="color-secondary-dark">HelloSmile</span> aktivni ugalj?</h2>
+									<ol class="list list--ol">
+										<li>Pokvasite četkicu vodom, a nakon toga utapkajte četkicu u aktivni ugalj.</li>
+										<li>Laganim pokretima prelazite preko površine zuba, vodeći računa da vaši pokreti
+											ne budu previše agresivni.
+										</li>
+										<li>Ostavite ugalj na zubima tri minuta kako biste se uverili da je ugalj imao
+											dovoljno vremena da se veže za površinske mrlje na zubima.
+										</li>
+										<li> Temeljno isperite usta vodom, a nakon toga koncem pažljivo očistite ostatak
+											koji se zadržao na zubima.
+										</li>
+										<li>Postupak ponavljajte jednom nedeljno, a najbolji efekat se postiže u kombinaciji
+											sa HelloSmile kompletom za izbeljivanje zuba.
+										</li>
+									</ol>
+								</div>
+							</div>
+
+							<div class="col-7@md order-1 order-2@md">
+								<figure class="aspect-ratio-16:9">
+									<img class="block width-100% shadow-lg radius-lg" loading="lazy"
+										data-src="{{ 'ugalj-sekcije-01.jpg' | asset_url }}" src="{{ 'ugalj-sekcije-01.jpg' | asset_url }}"
+										alt="Image description">
+								</figure>
+							</div>
+						</div>
+					</div>
+					<figure class="bg-decoration z-index-1" aria-hidden="true">
+						<svg width="1920" height="680" viewBox="0 0 1920 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0)">
+								<path opacity="0.5"
+									d="M1785 224C1816.48 224 1842 198.256 1842 166.5C1842 134.744 1816.48 109 1785 109C1753.52 109 1728 134.744 1728 166.5C1728 198.256 1753.52 224 1785 224Z"
+									fill="#FFAFD2" />
+								<g opacity="0.5" filter="url(#filter0_f)">
+									<path opacity="0.5"
+										d="M1708.4 547.354C1719.22 547.354 1728 538.578 1728 527.752C1728 516.926 1719.22 508.15 1708.4 508.15C1697.57 508.15 1688.8 516.926 1688.8 527.752C1688.8 538.578 1697.57 547.354 1708.4 547.354Z"
+										fill="#FFAFD2" />
+								</g>
+								<g opacity="0.5" filter="url(#filter1_f)">
+									<path
+										d="M19.5 350C-39.3183 350 -87 302.318 -87 243.5C-87 184.682 -39.3183 137 19.5 137C78.3183 137 126 184.682 126 243.5C126 302.318 78.3183 350 19.5 350Z"
+										fill="#FFAFD2" />
+								</g>
+							</g>
+							<defs>
+								<filter id="filter0_f" x="1683.8" y="503.15" width="49.2034" height="49.2034"
+									filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix" />
+									<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+									<feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur" />
+								</filter>
+								<filter id="filter1_f" x="-139" y="85" width="317" height="317" filterUnits="userSpaceOnUse"
+									color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix" />
+									<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+									<feGaussianBlur stdDeviation="26" result="effect1_foregroundBlur" />
+								</filter>
+								<clipPath id="clip0">
+									<rect width="1920" height="680" fill="white" transform="matrix(-1 0 0 1 1920 0)" />
+								</clipPath>
+							</defs>
+						</svg>
+					</figure>
+				</section>
+
+				<section
+					class="bg-rozika position-relative padding-top-sm padding-bottom-md padding-top-md@md padding-bottom-lg@md">
+					<div class="container max-width-adaptive-xl">
+						<div class="grid gap-md items-center">
+							<div class="col-7@md">
+								<figure>
+									<img class="block width-100% radius-lg shadow-lg" src="{{ 'ugalj-sekcije-02.jpg' | asset_url }}"
+										alt="Image description">
+								</figure>
+							</div>
+
+							<div class="col-5@md position-relative z-index-1 text-center text-left@md">
+								<div class="text-component">
+									<h2 class="padding-bottom-sm">
+										100% Prirodan</h2>
+									<p>Aktivni ugalj je vekovima poznat kao prirodno sredstvo za izbeljivanje zuba. Naša
+										formula je obogaćena biljkama koje čiste zube od naslaga i nečistoća, podižu pH
+										vrednost usporavajući nastanak karijesa i razmnožavanje bakterija.</p>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<figure class="bg-decoration" aria-hidden="true">
+						<svg width="1920" height="680" viewBox="0 0 1920 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="0.5"
+								d="M107 206C138.48 206 164 180.256 164 148.5C164 116.744 138.48 91 107 91C75.5198 91 50 116.744 50 148.5C50 180.256 75.5198 206 107 206Z"
+								fill="#FFAFD2" />
+							<g opacity="0.5" filter="url(#filter0_f)">
+								<path opacity="0.5"
+									d="M1631.6 206.203C1642.43 206.203 1651.2 197.427 1651.2 186.602C1651.2 175.776 1642.43 167 1631.6 167C1620.78 167 1612 175.776 1612 186.602C1612 197.427 1620.78 206.203 1631.6 206.203Z"
+									fill="#FFAFD2" />
+							</g>
+							<g opacity="0.5" filter="url(#filter1_f)">
+								<path opacity="0.5"
+									d="M1738.6 359.203C1749.43 359.203 1758.2 350.427 1758.2 339.602C1758.2 328.776 1749.43 320 1738.6 320C1727.78 320 1719 328.776 1719 339.602C1719 350.427 1727.78 359.203 1738.6 359.203Z"
+									fill="#FFAFD2" />
+							</g>
+							<g opacity="0.5" filter="url(#filter2_f)">
+								<path
+									d="M1256.5 613C1197.68 613 1150 565.318 1150 506.5C1150 447.682 1197.68 400 1256.5 400C1315.32 400 1363 447.682 1363 506.5C1363 565.318 1315.32 613 1256.5 613Z"
+									fill="#FFAFD2" />
+							</g>
+							<defs>
+								<filter id="filter0_f" x="1607" y="162" width="49.2034" height="49.2034" filterUnits="userSpaceOnUse"
+									color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix" />
+									<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+									<feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur" />
+								</filter>
+								<filter id="filter1_f" x="1714" y="315" width="49.2034" height="49.2034" filterUnits="userSpaceOnUse"
+									color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix" />
+									<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+									<feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur" />
+								</filter>
+								<filter id="filter2_f" x="1098" y="348" width="317" height="317" filterUnits="userSpaceOnUse"
+									color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix" />
+									<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+									<feGaussianBlur stdDeviation="26" result="effect1_foregroundBlur" />
+								</filter>
+							</defs>
+						</svg>
+					</figure>
+				</section>
+
+				<section class="bg-rozika padding-y-md padding-y-lg@md position-relative z-index-1">
+					<div class="container max-width-adaptive-xl">
+						<div class="grid gap-md items-center">
+							<div class="col-5@md order-2 order-1@md">
+								<div class="text-component">
+									<h2 class="padding-bottom-sm">
+										Rezultati</h2>
+									<ul class="list list--ul margin-top-sm text-md width-70%@md">
+										<li><span class="color-primary-dark font-bold">ANTIBAKTERIJSKO SVOJSTVO</span>
+											<br>
+											<p class="text-sm">Ukloniće štetne bakterije koje su glavni
+												uzročnik bolesti zuba i usne duplje.</p>
+										</li>
+										<li><span class="color-primary-dark font-bold">POLIRANI ZUBI</span>
+											<br>
+											<p class="text-sm">Blago abrazivno svojstvo očistiće zube od naslaga i
+												pružiće osećaj glatkoće</p>
+										</li>
+										<li><span class="color-primary-dark font-bold">EFEKAT BELINE</span>
+											<br>
+											<p class="text-sm">Himalajska so je jedan od aktivnih sastojaka koji će
+												izbeleti zube i ojačati desni</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="col-7@md order-1 order-2@md">
+								<figure class="aspect-ratio-16:9">
+									<img class="block width-100% shadow-lg radius-lg" loading="lazy"
+										data-src="{{ 'ugalj-sekcije-03.jpg' | asset_url }}" src="{{ 'ugalj-sekcije-03.jpg' | asset_url }}"
+										alt="Image description">
+								</figure>
+							</div>
+						</div>
+					</div>
+					<figure class="bg-decoration z-index-1" aria-hidden="true">
+						<svg width="1920" height="680" viewBox="0 0 1920 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0)">
+								<path opacity="0.5"
+									d="M1785 224C1816.48 224 1842 198.256 1842 166.5C1842 134.744 1816.48 109 1785 109C1753.52 109 1728 134.744 1728 166.5C1728 198.256 1753.52 224 1785 224Z"
+									fill="#FFAFD2" />
+								<g opacity="0.5" filter="url(#filter0_f)">
+									<path opacity="0.5"
+										d="M1708.4 547.354C1719.22 547.354 1728 538.578 1728 527.752C1728 516.926 1719.22 508.15 1708.4 508.15C1697.57 508.15 1688.8 516.926 1688.8 527.752C1688.8 538.578 1697.57 547.354 1708.4 547.354Z"
+										fill="#FFAFD2" />
+								</g>
+								<g opacity="0.5" filter="url(#filter1_f)">
+									<path
+										d="M19.5 350C-39.3183 350 -87 302.318 -87 243.5C-87 184.682 -39.3183 137 19.5 137C78.3183 137 126 184.682 126 243.5C126 302.318 78.3183 350 19.5 350Z"
+										fill="#FFAFD2" />
+								</g>
+							</g>
+							<defs>
+								<filter id="filter0_f" x="1683.8" y="503.15" width="49.2034" height="49.2034"
+									filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix" />
+									<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+									<feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur" />
+								</filter>
+								<filter id="filter1_f" x="-139" y="85" width="317" height="317" filterUnits="userSpaceOnUse"
+									color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix" />
+									<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+									<feGaussianBlur stdDeviation="26" result="effect1_foregroundBlur" />
+								</filter>
+								<clipPath id="clip0">
+									<rect width="1920" height="680" fill="white" transform="matrix(-1 0 0 1 1920 0)" />
+								</clipPath>
+							</defs>
+						</svg>
+					</figure>
+				</section>
+
+			</section>
+		</div>
+	</div>
+
+	<section class="products-gallery margin-top-xl@md margin-top-md">
+		<div class="container max-width-adaptive-lg">
+			<div class="margin-bottom-xs margin-bottom-md@md">
+				<div class="flex justify-center items-end justify-between@md">
+					<h2 class="text-xl text-xxl@md">Slični proizvodi</h2>
+					<a href="/products/" class="btn btn--subtle display@md" role="text">Pogledaj sve <i
+							class="sr-only">proizvode</i></a>
+				</div>
+			</div>
+
+			<div class="grid gap-sm">
+				<div class="prod-card-v2 col-4@md">
+
+					<a href="/products/2-pakovanja-uglja" class="prod-card-v2__img-link hover:elevate"
+						aria-label="Description of the link">
+						<figure class="media-wrapper media-wrapper--4:5">
+							<img loading="lazy" data-src="{{ '2-uglja-01.jpg' | asset_url }}" src="{{ '2-uglja-01.jpg' | asset_url }}"
+								alt="Product preview image">
+						</figure>
+					</a>
+
+					<div class="padding-xs text-center">
+						<h2 class="text-lg@md font-primary"><a href="/products/2-pakovanja-uglja" class="product-card-v2__title">
+								Aktivni Ugalj - Black Edition Duo
+							</a></h2>
+
+						<div class="margin-top-xxxs margin-bottom-xs">
+							<span class="prod-card-v2__price">4,090.00 RSD</span>
+						</div>
+						<a class="dva-uglja-preporuka btn btn--accent block text-center" @click="addDvaUgljaPreporuka()"
+							aria-controls="cart-drawer-1">Dodaj u korpu</a>
+					</div>
+				</div>
+				<div class="prod-card-v2 col-4@md">
+
+					<a href="/products/5-pakovanja-uglja" class="prod-card-v2__img-link hover:elevate"
+						aria-label="Description of the link">
+						<figure class="media-wrapper media-wrapper--4:5">
+							<img loading="lazy" data-src="{{ '5-ugalj-01.jpg' | asset_url }}" src="{{ '5-ugalj-01.jpg' | asset_url }}"
+								alt="Product preview image">
+						</figure>
+					</a>
+
+					<div class="padding-xs text-center">
+						<h2 class="text-lg@md font-primary"><a href="" class="product-card-v2__title">
+								One Year Black Set
+							</a></h2>
+
+						<div class="margin-top-xxxs margin-bottom-xs">
+							<span class="prod-card-v2__price">9,490.00 RSD</span>
+						</div>
+						<a class="add-pet-ugalj-preporuka btn btn--accent block text-center" @click="addPetUgaljPreporuka()"
+							aria-controls="cart-drawer-1">Dodaj u korpu</a>
+					</div>
+				</div>
+				<div class="prod-card-v2 col-4@md">
+
+					<a href="/products/pro-ugalj" class="prod-card-v2__img-link hover:elevate"
+						aria-label="Description of the link">
+						<figure class="media-wrapper media-wrapper--4:5">
+							<img loading="lazy" data-src="{{ 'pro-ugalj-01.jpg' | asset_url }}"
+								src="{{ 'pro-ugalj-01.jpg' | asset_url }}" alt="Product preview image">
+						</figure>
+					</a>
+
+					<div class="padding-xs text-center">
+						<h2 class="text-lg@md font-primary"><a href="" class="product-card-v2__title">
+								Black & White Offer
+							</a></h2>
+
+						<div class="margin-top-xxxs margin-bottom-xs">
+							<span class="prod-card-v2__price">6,490.00 RSD</span>
+						</div>
+						<a class="ugalj-pro-dole btn btn--accent block text-center" @click="addUgaljProDole()"
+							aria-controls="cart-drawer-1">Dodaj u korpu</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+</section>
+
+{% section 'nasmejani-korisnici' %}
+{% section 'popout-kupovina' %}

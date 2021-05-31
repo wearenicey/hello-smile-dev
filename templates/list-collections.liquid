@@ -1,0 +1,347 @@
+<section class="position-relative z-index-1 bg-gradient-white-bottom" style="margin-top: 70px;">
+	<div class="container max-width-adaptive-lg padding-y-lg padding-y-xl@md position-relative z-index-2">
+		<div class="text-center">
+			<p class="text-uppercase text-xs letter-spacing-lg">Hello Smile</p>
+			<h1 class="text-xxxl@md">Prodavnica</h1>
+		</div>
+	</div>
+	<figure class="bg-decoration z-index-1" aria-hidden="true">
+		<svg class="bg-decoration__svg color-contrast-low" viewBox="0 0 1920 450" fill="none">
+			<circle class="blend-overlay" opacity="0.5" cx="1745" cy="60" r="175"
+				fill="url(#bg-decoration-v1-fx-4-radial-1)" />
+			<circle opacity="0.5" r="65" transform="matrix(-1 0 0 1 240 110)" fill="url(#bg-decoration-v1-fx-4-radial-2)" />
+			<g opacity="0.5" filter="url(#bg-decoration-v1-fx-4-filter-1)">
+				<circle r="26" transform="matrix(-1 0 0 1 298 386)" fill="var(--color-primary)" />
+			</g>
+			<circle class="blend-overlay" opacity="0.5" cx="1470" cy="-299" r="439"
+				fill="url(#bg-decoration-v1-fx-4-radial-3)" />
+			<defs>
+				<filter id="bg-decoration-v1-fx-4-filter-1" x="267" y="355" width="62" height="62" filterUnits="userSpaceOnUse"
+					color-interpolation-filters="sRGB">
+					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+					<feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur" />
+				</filter>
+				<radialGradient id="bg-decoration-v1-fx-4-radial-1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+					gradientTransform="translate(1745 159) rotate(90) scale(175)">
+					<stop stop-color="var(--color-primary)" stop-opacity="0" />
+					<stop offset="1" stop-color="var(--color-primary)" />
+				</radialGradient>
+				<radialGradient id="bg-decoration-v1-fx-4-radial-2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+					gradientTransform="scale(65)">
+					<stop stop-color="var(--color-accent)" stop-opacity="0" />
+					<stop offset="1" stop-color="var(--color-accent)" />
+				</radialGradient>
+				<radialGradient id="bg-decoration-v1-fx-4-radial-3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+					gradientTransform="translate(1470 -299) rotate(90) scale(439)">
+					<stop stop-color="var(--color-accent)" stop-opacity="0" />
+					<stop offset="1" stop-color="var(--color-accent)" />
+				</radialGradient>
+			</defs>
+		</svg>
+	</figure>
+</section>
+
+
+{% comment %} START Osnovni Proizvodi{% endcomment %}
+<section class="padding-bottom-md">
+	<div class="container max-width-adaptive-lg">
+		<div class="grid gap-xl">
+			<!-- osnovni proivodi -->
+			<div>
+				<div class="grid gap-xs gap-lg@md">
+					<div class="col-3@lg">
+						<div class="text-component text-center text-left@lg">
+							<h2>Osnovni Proizvodi</h2>
+
+						</div>
+					</div>
+
+					<div class="col-9@lg">
+						<div class="grid gap-sm">
+							<div class="prod-card-v2 col-4@md">
+								<a href="/products/hello-smile-olovka" class="prod-card-v2__img-link hover:scale"
+									aria-label="Description of the link">
+									<a href="/products/hello-smile-olovka" class="prod-card-v2__img-link hover:elevate"
+										aria-label="Description of the link">
+										<figure class="media-wrapper media-wrapper--4:5">
+											<img src="{{ 'single-olovka-02.jpg' | asset_url }}" alt="Product preview image">
+										</figure>
+									</a>
+
+									<div class="padding-xs text-center">
+										<h2 class="text-lg@md font-primary"><a href="/products/hello-smile-olovka"
+												class="product-card-v2__title">
+												HelloSmile Single White
+											</a></h2>
+
+										<div class="margin-top-xxxs">
+											<span class="prod-card-v2__price">2,160.00 RSD</span>
+										</div>
+									</div>
+							</div>
+
+							<div class="prod-card-v2 col-4@md">
+								<a href="/products/hello-smile-pro" class="prod-card-v2__img-link hover:elevate"
+									aria-label="Description of the link">
+									<figure class="media-wrapper media-wrapper--4:5">
+										<img src="{{ 'pro-01.jpg' | asset_url }}" alt="Product preview image">
+									</figure>
+								</a>
+								<div class="padding-xs text-center">
+									<h2 class="text-md text-lg@md font-primary"><a href="/products/hello-smile-pro"
+											class="product-card-v2__title">
+											HelloSmile Pro
+										</a></h2>
+
+									<div class="margin-top-xxxs">
+										<span class="prod-card-v2__price">4,800.00 RSD</span>
+									</div>
+								</div>
+							</div>
+							<div class="prod-card-v2 col-4@md">
+								<a href="/products/hello-smile-aktivni-ugalj" class="prod-card-v2__img-link hover:scale"
+									aria-label="Description of the link">
+									<a href="/products/hello-smile-aktivni-ugalj" class="prod-card-v2__img-link hover:elevate"
+										aria-label="Description of the link">
+										<figure class="media-wrapper media-wrapper--4:5">
+											<img src="{{ 'single-ugalj-02.jpg' | asset_url }}" alt="Product preview image">
+										</figure>
+									</a>
+									<div class="padding-xs text-center">
+										<h2 class="text-lg@md font-primary"><a href="/products/hello-smile-aktivni-ugalj"
+												class="product-card-v2__title">
+												Aktivni Ugalj-Black Edition
+											</a></h2>
+
+										<div class="margin-top-xxxs">
+											<span class="prod-card-v2__price">2,390.00 RSD
+
+											</span>
+										</div>
+									</div>
+							</div>
+							<div class="prod-card-v2  col-4@md">
+								<a href="/products/duo-paket-olovke" class="prod-card-v2__img-link hover:elevate"
+									aria-label="Description of the link">
+									<figure class="media-wrapper media-wrapper--4:5">
+										<img src="{{ 'duo-01.jpg' | asset_url }}" alt="Product preview image">
+									</figure>
+								</a>
+
+								<div class="padding-xs text-center">
+									<h2 class="text-md text-lg@md font-primary"><a href="/products/duo-paket-olovke"
+											class="product-card-v2__title">
+											HelloSmile Duo Set
+										</a>
+									</h2>
+
+									<div class="margin-top-xxxs">
+										<span class="prod-card-v2__price">3,790.00 RSD
+
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="prod-card-v2 col-4@md">
+								<a href="/products/2-pakovanja-uglja" class="prod-card-v2__img-link hover:scale"
+									aria-label="Description of the link">
+									<a href="/products/2-pakovanja-uglja" class="prod-card-v2__img-link hover:elevate"
+										aria-label="Description of the link">
+										<figure class="media-wrapper media-wrapper--4:5">
+											<img src="{{ '2-uglja-01.jpg' | asset_url }}" alt="Product preview image">
+										</figure>
+									</a>
+
+									<div class="padding-xs text-center">
+										<h2 class="text-md text-lg@md font-primary"><a href="/products/2-pakovanja-uglja"
+												class="product-card-v2__title">
+												Aktivni Ugalj - Black Edition Duo
+											</a>
+										</h2>
+
+										<div class="margin-top-xxxs">
+											<span class="prod-card-v2__price">4.090,00 RSD</span>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+
+<section class="padding-bottom-md">
+	<div class="container max-width-adaptive-lg">
+		<div class="grid gap-xl">
+			<!-- osnovni proivodi -->
+			<div>
+				<div class="grid gap-lg">
+					<div class="col-3@lg">
+						<div class="text-component text-center text-left@lg">
+							<h2>Paketi</h2>
+							<!-- <p class="text-sm color-contrast-medium">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit
+								unde iure velit.</p> -->
+							{% comment %}<p><a href="" class="btn btn--subtle" role="text">View all <i
+										class="sr-only">products</i></a></p>{% endcomment %}
+						</div>
+					</div>
+
+					<div class="col-9@lg">
+						<div class="grid gap-sm">
+							<div class="prod-card-v2 col-6 col-4@md">
+								<span class="prod-card-v2__badge" role="text">Novo <i class="sr-only">product</i></span>
+								<a href="/products/2duo-olovka" class="prod-card-v2__img-link hover:scale"
+									aria-label="Description of the link">
+									<a href="/products/2duo-olovka" class="prod-card-v2__img-link hover:elevate"
+										aria-label="Description of the link">
+										<figure class="media-wrapper media-wrapper--4:5">
+											<img src="{{ '5-olovke-01.jpg' | asset_url }}" alt="Product preview image">
+										</figure>
+									</a>
+									<div class="padding-xs text-center">
+										<h2 class="text-md text-lg@md font-primary"><a href="/products/2duo-olovka"
+												class="product-card-v2__title">
+												Family Pack
+											</a>
+										</h2>
+
+										<div class="margin-top-xxxs">
+											<span class="prod-card-v2__price">8,490.00 RSD</span>
+										</div>
+									</div>
+							</div>
+
+							<div class="prod-card-v2 col-6 col-4@md">
+								<a href="/products/2-pro-seta" class="prod-card-v2__img-link hover:scale"
+									aria-label="Description of the link">
+									<a href="/products/2-pro-seta" class="prod-card-v2__img-link hover:elevate"
+										aria-label="Description of the link">
+										<figure class="media-wrapper media-wrapper--4:5">
+											<img src="{{ 'pro-duo-01.jpg' | asset_url }}" alt="Product preview image">
+										</figure>
+									</a>
+
+									<div class="padding-xs text-center">
+										<h2 class="text-md text-lg@md font-primary"><a href="/products/2-pro-seta"
+												class="product-card-v2__title">
+												White Sensation
+											</a></h2>
+
+										<div class="margin-top-xxxs">
+											<span class="prod-card-v2__price">8,650.00 RSD</span>
+										</div>
+									</div>
+							</div>
+
+							<div class="prod-card-v2 col-6 col-4@md">
+								<a href="/products/5-pakovanja-uglja" class="prod-card-v2__img-link hover:elevate"
+									aria-label="Description of the link">
+									<figure class="media-wrapper media-wrapper--4:5">
+										<img src="{{ '5-ugalj-01.jpg' | asset_url }}" alt="Product preview image">
+									</figure>
+								</a>
+								<div class="padding-xs text-center">
+									<h2 class="text-md text-lg@md font-primary"><a href="/products/5-pakovanja-uglja"
+											class="product-card-v2__title">
+											One Year Black Set
+										</a>
+									</h2>
+
+									<div class="margin-top-xxxs">
+										<span class="prod-card-v2__price">9,490.00 RSD</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="prod-card-v2 col-6 col-4@md">
+								<a href="/products/duo-pro-ugalj" class="prod-card-v2__img-link hover:elevate"
+									aria-label="Description of the link">
+									<figure class="media-wrapper media-wrapper--4:5">
+										<img src="{{ 'pro-duo-ugalj-01.jpg' | asset_url }}" alt="Product preview image">
+									</figure>
+								</a>
+
+								<div class="padding-xs text-center">
+									<h2 class="text-md text-lg@md font-primary"><a href="/products/duo-pro-ugalj"
+											class="product-card-v2__title">
+											Premium Paket
+										</a>
+									</h2>
+
+									<div class="margin-top-xxxs">
+										<span class="prod-card-v2__price">9,790.00 RSD</span>
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="prod-card-v2 col-6 col-4@md">
+								<a href="/products/pro-duo-set" class="prod-card-v2__img-link hover:elevate"
+									aria-label="Description of the link">
+									<figure class="media-wrapper media-wrapper--4:5">
+										<img src="{{ 'duo-pro-01.jpg' | asset_url }}" alt="Product preview image">
+									</figure>
+								</a>
+
+								<div class="padding-xs text-center">
+									<h2 class="text-md text-lg@md font-primary"><a href="/products/pro-duo-set"
+											class="product-card-v2__title">
+											The Essentials Set
+										</a></h2>
+
+									<div class="margin-top-xxxs">
+										<span class="prod-card-v2__price">7,700.00 RSD</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="prod-card-v2 col-6 col-4@md">
+								<a href="/products/pro-ugalj" class="prod-card-v2__img-link hover:elevate"
+									aria-label="Description of the link">
+									<figure class="media-wrapper media-wrapper--4:5">
+										<img src="{{ 'pro-ugalj-01.jpg' | asset_url }}" alt="Product preview image">
+									</figure>
+								</a>
+
+								<div class="padding-xs text-center">
+									<h2 class="text-md text-lg@md font-primary"><a href="/products/pro-ugalj"
+											class="product-card-v2__title">
+											Black & White Offer
+										</a></h2>
+
+									<div class="margin-top-xxxs">
+										<span class="prod-card-v2__price">6,490.00 RSD</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="prod-card-v2 col-6 col-4@md">
+								<a href="/products/ugalj-olovka" class="prod-card-v2__img-link hover:elevate"
+									aria-label="Description of the link">
+									<figure class="media-wrapper media-wrapper--4:5">
+										<img src="{{ 'olovka-ugalj-02.jpg' | asset_url }}" alt="Product preview image">
+									</figure>
+								</a>
+
+								<div class="padding-xs text-center">
+									<h2 class="text-md text-lg@md font-primary"><a href="/products/ugalj-olovka"
+											class="product-card-v2__title">
+											Double Impact
+										</a></h2>
+
+									<div class="margin-top-xxxs">
+										<span class="prod-card-v2__price">3,990.00 RSD</span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,451 @@
+<div class="pre-header padding-y-xs js-pre-header position-fixed width-100% z-index-2 top-0">
+	<div class="container max-width-lg">
+		<div class="text-component text-center text-sm">
+			<p class="font-bold">100% zagarantovani rezultati ili vraćamo novac
+			</p>
+		</div>
+	</div>
+</div>
+
+
+<header
+	class="mega-nav mega-nav--mobile mega-nav--desktop@md bg-white js-mega-nav hide-nav js-hide-nav js-hide-nav--main shadow-sm">
+	<div class="mega-nav__container max-width-adaptive-xl">
+		<!-- 👇 logo -->
+		<a href="../" class="mega-nav__logo">
+			<img loading="lazy" class="block width-100%" data-src="{{ 'hellosmile-logo.png' | asset_url }}"
+				src="{{ 'hellosmile-logo.png' | asset_url }}" alt="Image description">
+		</a>
+
+		<!-- 👇 icon buttons --mobile -->
+		<div class="mega-nav__icon-btns mega-nav__icon-btns--mobile">
+			<button class="reset mega-nav__icon-btn mega-nav__icon-btn--menu js-tab-focus" aria-label="Toggle menu"
+				aria-controls="mega-nav-navigation">
+				<svg class="icon" viewBox="0 0 24 24">
+					<g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10"
+						stroke-width="2">
+						<path d="M1 6h22" />
+						<path d="M1 12h22" />
+						<path d="M1 18h22" />
+					</g>
+				</svg>
+			</button>
+		</div>
+
+		<div class="mega-nav__nav js-mega-nav__nav" id="mega-nav-navigation" role="navigation" aria-label="Main">
+			<div class="mega-nav__nav-inner">
+				<ul class="mega-nav__items">
+					<li class="mega-nav__label">Menu</li>
+
+					<!-- 👇 layout 1 -> tabbed content -->
+					<li class="mega-nav__item js-mega-nav__item">
+						<button class="reset mega-nav__control js-mega-nav__control js-tab-focus">
+							Proizvodi
+							<i class="mega-nav__arrow-icon" aria-hidden="true">
+								<svg class="icon" viewBox="0 0 16 16">
+									<g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="square"
+										stroke-miterlimit="10" stroke-width="2">
+										<path d="M2 2l12 12" />
+										<path d="M14 2L2 14" />
+									</g>
+								</svg>
+							</i>
+						</button>
+
+						<div class="mega-nav__sub-nav-wrapper">
+							<div class="mega-nav__sub-nav mega-nav__sub-nav--layout-1">
+								<!-- 👇 links - visible on mobile -->
+								<ul class="mega-nav__sub-items">
+									<li class="mega-nav__sub-item">
+										<a href="/products/hello-smile-aktivni-ugalj" class="mega-nav__sub-link">
+											<span class="flex items-center gap-xs">
+												<img loading="lazy" class="block width-lg height-lg radius-50% object-cover"
+													data-src="{{ 'proizvod-olovka-thumb.jpg' | asset_url }}"
+													src="{{ 'proizvod-olovka-thumb.jpg' | asset_url }}"
+													alt="Hello Smile olovka za izbeljivanje zuba 2ml">
+												<i>Olovka za izbeljivanje zuba</i>
+											</span>
+										</a>
+									</li>
+
+									<li class="mega-nav__sub-item">
+										<a href="/products/hello-smile-pro" class="mega-nav__sub-link">
+											<span class="flex items-center gap-xs">
+												<img loading="lazy" class="block width-lg height-lg radius-50% object-cover"
+													data-src="{{ 'proizvod-pro-thumb.jpg' | asset_url }}"
+													src="{{ 'proizvod-pro-thumb.jpg' | asset_url }}" alt="Hello Smile pro aparat sa LED lampom">
+												<i>Pro aparat sa LED lampom</i>
+											</span>
+										</a>
+									</li>
+
+									<li class="mega-nav__sub-item">
+										<a href="/products/hello-smile-olovka" class="mega-nav__sub-link">
+											<span class="flex items-center gap-xs">
+												<img loading="lazy" class="block width-lg height-lg radius-50% object-cover"
+													data-src="{{ 'proizvod-ugalj-thumb.jpg' | asset_url }}"
+													src="{{ 'proizvod-ugalj-thumb.jpg' | asset_url }}" alt="Hello Smile aktivni ugalj">
+												<i>Aktivni ugalj</i>
+											</span>
+										</a>
+									</li>
+									<li class="mega-nav__sub-item">
+										<a href="/products/duo-paket-olovke" class="mega-nav__sub-link">
+											<span class="flex items-center gap-xs">
+												<img loading="lazy" class="block width-lg height-lg radius-50% object-cover"
+													data-src="{{ 'proizvod-duo-thumb.jpg' | asset_url }}"
+													src="{{ 'proizvod-duo-thumb.jpg' | asset_url }}" alt="Hello Smile aktivni ugalj">
+												<i>HelloSmile Duo Set
+												</i>
+											</span>
+										</a>
+									</li>
+									<li class="mega-nav__sub-item">
+										<a href="/products/2-pakovanja-uglja" class="mega-nav__sub-link">
+											<span class="flex items-center gap-xs">
+												<img loading="lazy" class="block width-lg height-lg radius-50% object-cover"
+													data-src="{{ 'proizvod-black-duo-thumb.jpg' | asset_url }}"
+													src="{{ 'proizvod-black-duo-thumb.jpg' | asset_url }}" alt="Hello Smile aktivni ugalj">
+												<i>2 x Black Edition Aktivni ugalj
+												</i>
+											</span>
+										</a>
+									</li>
+								</ul>
+
+								<!-- 👇 tabs - visible on desktop -->
+								<div class="mega-nav__tabs grid gap-lg js-tabs">
+									<ul class="col-4 mega-nav__tabs-controls js-tabs__controls" aria-label="Select a product">
+										<li>
+											<a href="#tabProduct1" class="mega-nav__tabs-control js-tab-focus" aria-selected="true">
+												<span class="flex items-center gap-xs">
+													<img loading="lazy" class="block width-lg height-lg radius-50% object-cover"
+														data-src="{{ 'proizvod-olovka-thumb.jpg' | asset_url }}"
+														src="{{ 'proizvod-olovka-thumb.jpg' | asset_url }}" alt="Image description">
+
+													<i class="margin-right-xxxs">Olovka za izbeljivanje zuba</i>
+
+													<svg class="icon icon--xs margin-left-auto" viewBox="0 0 16 16" aria-hidden="true">
+														<path d="M5,2l6,6L5,14" fill="none" stroke="currentColor" stroke-linecap="square"
+															stroke-miterlimit="10" stroke-width="1" />
+													</svg>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a href="#tabProduct2" class="mega-nav__tabs-control js-tab-focus" aria-selected="true">
+												<span class="flex items-center gap-xs">
+													<img loading="lazy" class="block width-lg height-lg radius-50% object-cover"
+														data-src="{{ 'proizvod-pro-thumb.jpg' | asset_url }}"
+														src="{{ 'proizvod-pro-thumb.jpg' | asset_url }}" alt="Image description">
+													<i class="margin-right-xxxs">HelloSmile Pro</i>
+
+													<svg class="icon icon--xs margin-left-auto" viewBox="0 0 16 16" aria-hidden="true">
+														<path d="M5,2l6,6L5,14" fill="none" stroke="currentColor" stroke-linecap="square"
+															stroke-miterlimit="10" stroke-width="1" />
+													</svg>
+												</span>
+											</a>
+										</li>
+
+										<li>
+											<a href="#tabProduct3" class="mega-nav__tabs-control js-tab-focus" aria-selected="true">
+												<span class="flex items-center gap-xs">
+													<img loading="lazy" class="block width-lg height-lg radius-50% object-cover"
+														data-src="{{ 'proizvod-ugalj-thumb.jpg' | asset_url }}"
+														src="{{ 'proizvod-ugalj-thumb.jpg' | asset_url }}" alt="Image description">
+
+													<i class="margin-right-xxxs">Aktivni Ugalj</i>
+
+													<svg class="icon icon--xs margin-left-auto" viewBox="0 0 16 16" aria-hidden="true">
+														<path d="M5,2l6,6L5,14" fill="none" stroke="currentColor" stroke-linecap="square"
+															stroke-miterlimit="10" stroke-width="1" />
+													</svg>
+												</span>
+											</a>
+										</li>
+										<li>
+											<a href="#tabProduct4" class="mega-nav__tabs-control js-tab-focus" aria-selected="true">
+												<span class="flex items-center gap-xs">
+													<img loading="lazy" class="block width-lg height-lg radius-50% object-cover"
+														data-src="{{ 'proizvod-duo-thumb.jpg' | asset_url }}"
+														src="{{ 'proizvod-duo-thumb.jpg' | asset_url }}" alt="Image description">
+
+													<i class="margin-right-xxxs">HelloSmile Duo Set
+													</i>
+
+													<svg class="icon icon--xs margin-left-auto" viewBox="0 0 16 16" aria-hidden="true">
+														<path d="M5,2l6,6L5,14" fill="none" stroke="currentColor" stroke-linecap="square"
+															stroke-miterlimit="10" stroke-width="1" />
+													</svg>
+												</span>
+											</a>
+										</li>
+										<li>
+											<a href="#tabProduct5" class="mega-nav__tabs-control js-tab-focus" aria-selected="true">
+												<span class="flex items-center gap-xs">
+													<img loading="lazy" class="block width-lg height-lg radius-50% object-cover"
+														data-src="{{ 'proizvod-black-duo-thumb.jpg' | asset_url }}"
+														src="{{ 'proizvod-black-duo-thumb.jpg' | asset_url }}" alt="Image description">
+
+													<i class="margin-right-xxxs">Aktivni Ugalj Black edition Duo
+													</i>
+
+													<svg class="icon icon--xs margin-left-auto" viewBox="0 0 16 16" aria-hidden="true">
+														<path d="M5,2l6,6L5,14" fill="none" stroke="currentColor" stroke-linecap="square"
+															stroke-miterlimit="10" stroke-width="1" />
+													</svg>
+												</span>
+											</a>
+										</li>
+									</ul>
+
+									<div class="col-8 js-tabs__panels">
+										<section id="tabProduct1" class="mega-nav__tabs-panel js-tabs__panel">
+											<a href="#0" class="mega-nav__tabs-img margin-bottom-md">
+												<img loading="lazy" class="block width-100%" data-src="{{ 'single-navbar.png' | asset_url }}"
+													src="{{ 'single-navbar.png' | asset_url }}" alt="Image description"></a>
+
+											<div class="text-component">
+												<h1 class="text-xl">Olovka za izbeljivanje zuba 2ml</h1>
+												<p class="color-contrast-medium">Naša olovka za izbeljivanje zuba dizajnirana je kao džepno
+													rešenje, odlična je za nanošenje gela na teško dostupnim
+													mestima.
+												</p>
+												<p class="flex gap-xxs">
+													<a href="/products/hello-smile-olovka" class="btn btn--accent">Saznaj više</a>
+												</p>
+											</div>
+										</section>
+
+										<section id="tabProduct2" class="mega-nav__tabs-panel js-tabs__panel">
+											<a href="/products/hello-smile-pro" class="mega-nav__tabs-img margin-bottom-md">
+												<img loading="lazy" class="block width-100%" data-src="{{ 'pro-navbar.png' | asset_url }}"
+													src="{{ 'pro-navbar.png' | asset_url }}" alt="Image description">
+											</a>
+
+											<div class="text-component">
+												<h1 class="text-xl">HelloSmile Pro</h1>
+												<p class="color-contrast-medium">HelloSmile Wireless LED tehnologija dizajnirana je da izbeli
+													zube za samo 16 minuta.</p>
+												<p class="flex gap-xxs">
+													<a href="/products/hello-smile-pro" class="btn btn--accent">Saznaj više</a>
+												</p>
+											</div>
+										</section>
+
+										<section id="tabProduct3" class="mega-nav__tabs-panel js-tabs__panel">
+											<a href="/products/hello-smile-aktivni-ugalj" class="mega-nav__tabs-img margin-bottom-md">
+												<img loading="lazy" class="block width-100%" data-src="{{ 'ugalj-navbar.png' | asset_url }}"
+													src="{{ 'ugalj-navbar.png' | asset_url }}" alt="Image description">
+											</a>
+
+											<div class="text-component">
+												<h1 class="text-xl">HelloSmile Aktivni Ugalj</h1>
+												<p class="color-contrast-medium">Inovacija brenda HelloSmile je aktivni ugalj obogaćen
+													nutrijentima koji čiste zube od naslaga i nečistoća,
+													usporavajući nastanak karijesa i razmnožavanje bakterija.</p>
+												<p class="flex gap-xxs">
+													<a href="/products/hello-smile-aktivni-ugalj" class="btn btn--accent">Saznaj više</a>
+												</p>
+											</div>
+										</section>
+										<section id="tabProduct4" class="mega-nav__tabs-panel js-tabs__panel">
+											<a href="/products/duo-paket-olovke" class="mega-nav__tabs-img margin-bottom-md">
+												<img loading="lazy" class="block width-100%" data-src="{{ 'duo-navbar.png' | asset_url }}"
+													src="{{ 'duo-navbar.png' | asset_url }}" alt="Image description">
+											</a>
+
+											<div class="text-component">
+												<h1 class="text-xl">HelloSmile Duo Set</h1>
+												<p class="color-contrast-medium">Nova formula HelloSmile olovke bez peroksida ima dvostruko
+													dejstvo. Izbeljuje zube i čuva zubnu gleđ. Duo set obezbeđuje 60+ tretmana.</p>
+												<p class="flex gap-xxs">
+													<a href="/products/duo-paket-olovke" class="btn btn--accent">Saznaj više</a>
+												</p>
+											</div>
+										</section>
+										<section id="tabProduct5" class="mega-nav__tabs-panel js-tabs__panel">
+											<a href="/products/2-pakovanja-uglja" class="mega-nav__tabs-img margin-bottom-md">
+												<img loading="lazy" class="block width-100%" data-src="{{ 'ugalj-duo-navbar.png' | asset_url }}"
+													src="{{ 'ugalj-duo-navbar.png' | asset_url }}" alt="Image description">
+											</a>
+
+											<div class="text-component">
+												<h1 class="text-xl">2 x Black Edition Aktivni Ugalj</h1>
+												<p class="color-contrast-medium">HelloSmile Black Edition – je 100% prirodan način za
+													izbeljivanje zuba čiju osnovu čini aktivni ugalj koji se dobija karbonizacijom ljuske
+													kokosovog oraha. </p>
+												<p class="flex gap-xxs">
+													<a href="/products/2-pakovanja-uglja" class="btn btn--accent">Saznaj više</a>
+												</p>
+											</div>
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<!-- 👇 layout 3 -> gallery -->
+					<li class="mega-nav__item">
+						<a href="/collections/" class="mega-nav__control">Paketi</a>
+					</li>
+
+					<li class="mega-nav__item">
+						<a href="/pages/nasa-prica" class="mega-nav__control">Naša priča</a>
+					</li>
+
+					<!-- 👇 layout 4 -> single list -->
+					<li class="mega-nav__item js-mega-nav__item">
+						<button class="reset mega-nav__control js-mega-nav__control js-tab-focus">
+							Podrška
+							<i class="mega-nav__arrow-icon" aria-hidden="true">
+								<svg class="icon" viewBox="0 0 16 16">
+									<g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="square"
+										stroke-miterlimit="10" stroke-width="2">
+										<path d="M2 2l12 12" />
+										<path d="M14 2L2 14" />
+									</g>
+								</svg>
+							</i>
+						</button>
+
+						<div class="mega-nav__sub-nav-wrapper">
+							<div class="mega-nav__sub-nav mega-nav__sub-nav--layout-4">
+								<ul class="mega-nav__sub-items">
+									<li class="mega-nav__label">Pomoć i podrška</li>
+									<li class="mega-nav__sub-item">
+										<a href="/pages/pitanja-i-odgovori" class="mega-nav__sub-link text-xl@md">Najčešća pitanja i
+											odgovori</a>
+									</li>
+									<li class="mega-nav__sub-item">
+										<a href="/pages/isporuka" class="mega-nav__sub-link text-xl@md">Isporuka</a>
+									</li>
+									<li class="mega-nav__sub-item">
+										<a href="/pages/reklamacije" class="mega-nav__sub-link text-xl@md">Reklamacije</a>
+									</li>
+									<li class="mega-nav__sub-item">
+										<a href="/pages/opsti-uslovi" class="mega-nav__sub-link text-xl@md">Opšti uslovi</a>
+									</li>
+									<li class="mega-nav__sub-item">
+										<a href="/pages/garancija" class="mega-nav__sub-link text-xl@md">Garancija</a>
+									</li>
+									<li class="mega-nav__sub-item">
+										<a href="/pages/kontakt" class="mega-nav__sub-link text-xl@md">Kontaktirajte nas</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					<li class="mega-nav__item">
+						<a href="" class="mega-nav__control" aria-controls="cart-drawer-1" id="kec">
+							<div>
+								<svg class="icon margin-right-xxxs@md" viewBox="0 0 24 24">
+									<title>Go to cart page</title>
+									<g class="icon__group" fill="none" stroke-linecap="square" stroke-linejoin="miter"
+										stroke="currentColor">
+										<polyline points="4,4 22,4 19,14 4,14 "></polyline>
+										<circle cx="4" cy="22" r="2" fill="currentColor" stroke="none"></circle>
+										<circle cx="20" cy="22" r="2" fill="currentColor" stroke="none"></circle>
+										<polyline points="1,1 4,4 4,14 2,18 23,18 " stroke-linecap="butt"></polyline>
+									</g>
+								</svg>
+								<span class="counter counter--critical display@md" id="cartCount"><i class="sr-only">items in
+										cart</i></span>
+							</div>
+							<span class="margin-left-xxs margin-left-0@md">Korpa</span>
+						</a>
+					</li>
+				</ul>
+
+
+			</div>
+		</div>
+
+	</div>
+</header>
+
+<!-- drawer cart -->
+
+<div class="drawer dr-cart js-drawer " id="cart-drawer-1">
+	<div class="drawer__content bg shadow-md flex flex-column mini-cart " role="alertdialog"
+		aria-labelledby="cart-drawer-1">
+
+		<header
+			class="flex items-center justify-between flex-shrink-0 border-bottom border-contrast-lower padding-x-sm padding-y-xs">
+			<h1 id="drawer-cart-title" class="text-base text-truncate">Vaša korpa</h1>
+
+			<button class="reset drawer__close-btn js-drawer__close js-tab-focus " id="close-test">
+				<svg class="icon icon--xs" viewBox="0 0 16 16">
+					<title>Close drawer panel</title>
+					<g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"
+						stroke-miterlimit="10">
+						<line x1="13.5" y1="2.5" x2="2.5" y2="13.5"></line>
+						<line x1="2.5" y1="2.5" x2="13.5" y2="13.5"></line>
+					</g>
+				</svg>
+			</button>
+		</header>
+
+
+		<div class="drawer__body padding-x-sm padding-bottom-sm js-drawer__body">
+
+			<template v-if="cart.items.length > 0">
+				<template v-for="(item, index) in cart.items">
+					<ol>
+						<li class="dr-cart__product">
+							<template v-if="item.image">
+								<a :href="item.url" class="dr-cart__img">
+									<img class="" :src="item.image" alt="">
+								</a>
+							</template>
+							<div>
+								<h2 class="text-sm">
+									${item.title}
+								</h2>
+								<div class="margin-top-xxxs">
+									<div class="select dr-cart__select">
+										<input @change="updateCart()" type="number" class="form-control width-xxxl eventBtn"
+											name="updates[]" :id="'updates_'+item.key" v-model="item.quantity" min="1"
+											aria-label="{{ 'cart.general.item_quantity' | t }}" style="max-width: calc(100% + 20px);">
+									</div>
+								</div>
+							</div>
+
+							<div class="text-right">
+								<p class="text-sm color-contrast-higher">${total_price(item) | money}</p>
+								<button class="dr-cart__remove-btn margin-top-xxxs" @click="remove(item)">Ukloni
+								</button>
+							</div>
+						</li>
+					</ol>
+				</template>
+			</template>
+			<template v-else>
+				<p class="text-center margin-top-lg">Vaša Korpa je prazna</p>
+			</template>
+		</div>
+
+
+		<footer class="padding-x-sm padding-y-xs border-top border-contrast-lower flex-shrink-0">
+			<div class="flex justify-between">
+				<p>Ukupno:</p>
+				<p class="font-bold" v-if='cart'>${ cart_total_price | money }</p>
+			</div>
+			<a href="/cart" class="btn btn--md btn--primary width-100% margin-top-xs">Vaša Korpa &rarr;</a>
+			<button onclick="window.location.href='/checkout/'" class="btn btn--md btn--primary width-100% margin-top-xxs"
+				:disabled='isDisabled'>Poručite&rarr;</button>
+			<p class="text-center margin-top-xs">
+				<label for='terms'>
+					<input id='terms' type='checkbox' v-model='terms' /> Saglasan sam sa
+					<a href="/pages/opsti-uslovi">uslovima korišćenja</a> online prodavnice
+				</label>
+			</p>
+		</footer>
+	</div>
+
+
+</div>

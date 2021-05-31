@@ -1,0 +1,235 @@
+<section class="products-gallery margin-top-xl@md margin-top-md">
+	<div class="container max-width-adaptive-lg">
+		<div class="margin-bottom-xs margin-bottom-md@md">
+			<div class="flex justify-center items-end justify-between@md">
+				<h2 class="text-xl text-xxl@md">Popularni paketi</h2>
+				<a href="/products" class="btn btn--subtle display@md" role="text">Pogledaj sve <i
+						class="sr-only">proizvode</i></a>
+			</div>
+		</div>
+
+		<div class="carousel carousel-v2 flex flex-column js-carousel" data-drag="on" data-loop="off" data-navigation="on"
+			data-navigation-class="carousel-v2__navigation" data-navigation-item-class="carousel-v2__navigation-item">
+			<p class="sr-only">Carousel items</p>
+
+			<div class="carousel__wrapper position-relative overflow-hidden">
+				<ol class="carousel__list items-center">
+					<li class="carousel__item">
+						<div class="prod-card-v2 ">
+							<span class="prod-card-v2__badge" role="text">Novo <i class="sr-only">product</i></span>
+							<a href="/products/2duo-olovka" class="prod-card-v2__img-link hover:scale"
+								aria-label="Description of the link">
+								<a href="/products/2duo-olovka" class="prod-card-v2__img-link hover:elevate"
+									aria-label="Description of the link">
+									<figure class="media-wrapper media-wrapper--4:5">
+										<img loading="lazy" data-src="{{ '5-olovke-01.jpg' | asset_url }}"
+											src="{{ '5-olovke-01.jpg' | asset_url }}" alt="Product preview image">
+									</figure>
+								</a>
+								<div class="padding-xs text-center">
+									<h2 class="text-md text-lg@md font-primary">
+										<a href="/products/2duo-olovka" class="product-card-v2__title">
+											Family Pack
+										</a>
+									</h2>
+
+									<div class="margin-top-xxxs">
+										<span class="prod-card-v2__price">8,490.00 RSD</span>
+									</div>
+									<a class="duo-paket-olovke-preporuka btn btn--accent block text-center margin-top-xs"
+										@click="addDuoPaketOlovkePreporuka()" aria-controls="cart-drawer-1">Dodaj u
+										korpu</a>
+								</div>
+							</a>
+						</div>
+					</li>
+
+
+					<li class="carousel__item">
+						<div class="prod-card-v2 ">
+							<a href="/products/2-pro-seta" class="prod-card-v2__img-link hover:scale"
+								aria-label="Description of the link">
+								<a href="/products/2-pro-seta" class="prod-card-v2__img-link hover:elevate"
+									aria-label="Description of the link">
+									<figure class="media-wrapper media-wrapper--4:5">
+										<img loading="lazy" data-src="{{ 'pro-duo-01.jpg' | asset_url }}"
+											src="{{ 'pro-duo-01.jpg' | asset_url }}" alt="Product preview image">
+									</figure>
+								</a>
+
+								<div class="padding-xs text-center">
+									<h2 class="text-md text-lg@md font-primary">
+										<a href="/products/2-pro-seta" class="product-card-v2__title">
+											White Sensation
+										</a>
+									</h2>
+
+									<div class="margin-top-xxxs">
+										<span class="prod-card-v2__price">8,650.00 RSD</span>
+									</div>
+									<a class="dva-proset-preporuka btn btn--accent block text-center margin-top-xs"
+										@click="addDvaProsetPreporuka()" aria-controls="cart-drawer-1">Dodaj u
+										korpu</a>
+								</div>
+							</a>
+						</div>
+
+					</li>
+
+					<li class="carousel__item">
+						<div class="prod-card-v2 ">
+							<a href="/products/5-pakovanja-uglja" class="prod-card-v2__img-link hover:elevate"
+								aria-label="Description of the link">
+								<figure class="media-wrapper media-wrapper--4:5">
+									<img loading="lazy" data-src="{{ '5-ugalj-01.jpg' | asset_url }}"
+										src="{{ '5-ugalj-01.jpg' | asset_url }}" alt="Product preview image">
+								</figure>
+							</a>
+							<div class="padding-xs text-center">
+								<h2 class="text-md text-lg@md font-primary">
+									<a href="/products/5-pakovanja-uglja" class="product-card-v2__title">
+										One Year Black Set
+									</a>
+								</h2>
+
+								<div class="margin-top-xxxs">
+									<span class="prod-card-v2__price">9,490.00 RSD</span>
+								</div>
+								<a class="add-pet-ugalj-preporuka btn btn--accent block text-center margin-top-xs"
+									@click="addPetUgaljPreporuka()" aria-controls="cart-drawer-1">Dodaj u
+									korpu</a>
+							</div>
+						</div>
+					</li>
+
+					<li class="carousel__item">
+						<div class="prod-card-v2 ">
+							<a href="/products/duo-pro-ugalj" class="prod-card-v2__img-link hover:elevate"
+								aria-label="Description of the link">
+								<figure class="media-wrapper media-wrapper--4:5">
+									<img loading="lazy" data-src="{{ 'pro-duo-ugalj-01.jpg' | asset_url }}"
+										src="{{ 'pro-duo-ugalj-01.jpg' | asset_url }}" alt="Product preview image">
+								</figure>
+							</a>
+
+							<div class="padding-xs text-center">
+								<h2 class="text-md text-lg@md font-primary">
+									<a href="/products/duo-pro-ugalj" class="product-card-v2__title">
+										Premium paket
+									</a>
+								</h2>
+
+								<div class="margin-top-xxxs">
+									<span class="prod-card-v2__price">9,790.00 RSD</span>
+								</div>
+								<a class="duo-pro-ugalj-preporuka btn btn--accent block text-center margin-top-xs"
+									@click="addDuoProUgaljPreporuka()" aria-controls="cart-drawer-1">Dodaj u
+									korpu</a>
+							</div>
+						</div>
+					</li>
+					<li class="carousel__item">
+						<div class="prod-card-v2">
+							<a href="/products/pro-duo-set" class="prod-card-v2__img-link hover:elevate"
+								aria-label="Description of the link">
+								<figure class="media-wrapper media-wrapper--4:5">
+									<img src="{{ 'duo-pro-01.jpg' | asset_url }}" alt="Product preview image">
+								</figure>
+							</a>
+
+							<div class="padding-xs text-center">
+								<h2 class="text-md text-lg@md font-primary">
+									<a href="/products/pro-duo-set" class="product-card-v2__title">
+										The Essentials Set
+									</a>
+								</h2>
+
+								<div class="margin-top-xxxs">
+									<span class="prod-card-v2__price">7,700.00 RSD</span>
+								</div>
+								<a class="pro-duo-preporuka btn btn--accent block text-center margin-top-xs"
+									@click="addProDuoPreporuka()" aria-controls="cart-drawer-1">Dodaj u
+									korpu</a>
+							</div>
+						</div>
+					</li>
+					<li class="carousel__item">
+						<div class="prod-card-v2">
+							<a href="/products/pro-ugalj" class="prod-card-v2__img-link hover:elevate"
+								aria-label="Description of the link">
+								<figure class="media-wrapper media-wrapper--4:5">
+									<img src="{{ 'pro-ugalj-01.jpg' | asset_url }}" alt="Product preview image">
+								</figure>
+							</a>
+
+							<div class="padding-xs text-center">
+								<h2 class="text-md text-lg@md font-primary">
+									<a href="/products/pro-ugalj" class="product-card-v2__title">
+										Black & White Offer
+									</a>
+								</h2>
+
+								<div class="margin-top-xxxs">
+									<span class="prod-card-v2__price">6,490.00 RSD</span>
+								</div>
+								<a class="pro-ugalj-preporuka btn btn--accent block text-center margin-top-xs"
+									@click="proUgaljPreporuka()" aria-controls="cart-drawer-1">Dodaj u
+									korpu</a>
+							</div>
+						</div>
+					</li>
+					<li class="carousel__item">
+						<div class="prod-card-v2 ">
+							<a href="/products/ugalj-olovka" class="prod-card-v2__img-link hover:elevate"
+								aria-label="Description of the link">
+								<figure class="media-wrapper media-wrapper--4:5">
+									<img src="{{ 'olovka-ugalj-02.jpg' | asset_url }}" alt="Product preview image">
+								</figure>
+							</a>
+
+							<div class="padding-xs text-center">
+								<h2 class="text-md text-lg@md font-primary">
+									<a href="/products/ugalj-olovka" class="product-card-v2__title">
+										Double Impact
+									</a>
+								</h2>
+
+								<div class="margin-top-xxxs">
+									<span class="prod-card-v2__price">3,990.00 RSD</span>
+								</div>
+								<a class="ugalj-olovke-preporuka btn btn--accent block text-center margin-top-xs"
+									@click="addUgaljOlovkaPreporuka()" aria-controls="cart-drawer-1">Dodaj u
+									korpu</a>
+							</div>
+						</div>
+					</li>
+				</ol>
+
+				<nav class="no-js:is-hidden">
+					<ul
+						class="position-absolute top-0 left-0 bottom-0 right-0 pointer-events-none flex items-center justify-between">
+						<li>
+							<button class="reset carousel-v2__control carousel-v2__control--prev js-carousel__control js-tab-focus">
+								<svg class="icon" viewBox="0 0 20 20">
+									<title>Show previous items</title>
+									<polyline points="13 18 5 10 13 2" fill="none" stroke="currentColor" stroke-miterlimit="10"
+										stroke-width="2" />
+								</svg>
+							</button>
+						</li>
+
+						<li>
+							<button class="reset carousel-v2__control carousel-v2__control--next js-carousel__control js-tab-focus">
+								<svg class="icon" viewBox="0 0 20 20">
+									<title>Show next items</title>
+									<polyline points="7 18 15 10 7 2" fill="none" stroke="currentColor" stroke-miterlimit="10"
+										stroke-width="2" />
+								</svg>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</section>

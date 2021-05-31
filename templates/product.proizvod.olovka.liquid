@@ -1,0 +1,648 @@
+{% comment %} START Sticky Bar Cart {% endcomment %}
+<div
+	class="sticky-banner sticky-banner--bottom bg-white bg-opacity-80% backdrop-blur-10 color-bg js-sticky-banner padding-y-xs padding-y-xs@md padding-x-xs padding-x-md@md"
+	data-target-in="#sticky-bar-cart">
+	<!--👇 sticky banner content -->
+	<div class="flex gap-xs flex-row items-center justify-between">
+		<div class="flex items-center">
+			<img loading="lazy" data-src="{{ 'proizvod-olovka-bar.png' | asset_url }}"
+				src="{{ 'proizvod-olovka-bar.png' | asset_url }}" class="margin-right-xxs margin-right-xs@md display@md" alt="">
+			<h3 class="margin-left-0 margin-bottom-0 display@md">{{ product.title }}</h3>
+			<h3 class="margin-right-xxs margin-bottom-0 hide@md">{{ product.price | money }}</h3>
+		</div>
+		<div class="flex items-center">
+			<h3 class="margin-right-xxs margin-bottom-0 display@md">{{ product.price | money }}</h3>
+			<a class="olovka btn btn--primary padding-x-md@md" @click="addPencile()" aria-controls="cart-drawer-1">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+					class="margin-right-xxxs margin-right-xxs@md">
+					<title>Dodaj u korpu</title>
+					<g>
+						<path fill="#ffffff"
+							d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19zM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74A3.007 3.007 0 0 0 3.92 3H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7zM16.5 19a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5z">
+						</path>
+					</g>
+				</svg>
+				Dodaj u korpu
+			</a>
+		</div>
+	</div>
+</div>
+
+{% comment %} Product Images Mobile {% endcomment %}
+<section class="products-gallery position-relative hide@md" style="margin-top: 70px;">
+	<div class=" container max-width-adaptive-lg">
+		<div class="carousel carousel-v2 flex flex-column js-carousel" data-drag="on" data-loop="off" data-navigation="on"
+			data-navigation-class="carousel-v2__navigation" data-navigation-item-class="carousel-v2__navigation-item">
+			<p class="sr-only">Carousel items</p>
+
+			<div class="carousel__wrapper position-relative overflow-hidden">
+				<ol class="carousel__list items-start">
+					<li class="carousel__item">
+						<img loading="lazy" data-src="{{ 'single-olovka-01-mobile.jpg' | asset_url }}"
+							src="{{ 'single-olovka-01-mobile.jpg' | asset_url }}" class="width-100%" alt="">
+
+
+					<li class="carousel__item">
+
+						<img loading="lazy" data-src="{{ 'single-olovka-02-mobile.jpg' | asset_url }}"
+							src="{{ 'single-olovka-02-mobile.jpg' | asset_url }}" class="width-100%" alt="">
+
+					</li>
+
+					<li class="carousel__item">
+						<img loading="lazy" data-src="{{ 'single-olovka-03-mobile.jpg' | asset_url }}"
+							src="{{ 'single-olovka-03-mobile.jpg' | asset_url }}" class="width-100%" alt="">
+
+					</li>
+
+
+				</ol>
+
+				<nav class="no-js:is-hidden">
+					<ul
+						class="position-absolute top-0 left-0 bottom-0 right-0 pointer-events-none flex items-center justify-between">
+						<li>
+							<button class="reset carousel-v2__control carousel-v2__control--prev js-carousel__control js-tab-focus">
+								<svg class="icon" viewBox="0 0 20 20">
+									<title>Show previous items</title>
+									<polyline points="13 18 5 10 13 2" fill="none" stroke="currentColor" stroke-miterlimit="10"
+										stroke-width="2" />
+								</svg>
+							</button>
+						</li>
+
+						<li>
+							<button class="reset carousel-v2__control carousel-v2__control--next js-carousel__control js-tab-focus">
+								<svg class="icon" viewBox="0 0 20 20">
+									<title>Show next items</title>
+									<polyline points="7 18 15 10 7 2" fill="none" stroke="currentColor" stroke-miterlimit="10"
+										stroke-width="2" />
+								</svg>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+</section>
+
+</div>
+</section>
+
+
+{% comment %} START Proizvod {% endcomment %}
+<section class="position-relative z-index-2 bg">
+	<!-- your content here -->
+	<section id="product-mobile" class="product-v3 padding-bottom-xs padding-top-lg@md js-product-v3">
+
+		{% comment %} START About {% endcomment %}
+		<div class="container max-width-adaptive-xl" id="sticky-bar-cart">
+			<div class="grid gap-sm gap-lg@md">
+				<div class="col-12 col-6@md col-7@xl min-width-0">
+
+					{% comment %} Product Images Desktop {% endcomment %}
+					<div class="flex flex-column display@md">
+						{% for image in product.images %}
+						<img class="block width-100%" src="{{ image.src | product_img_url: 'master' }}" alt="Image description">
+						{% endfor %}
+					</div>
+				</div>
+
+				<div class="col-12 col-6@md col-5@xl padding-top-0@md">
+					<div class="product-v3__panel">
+						<div class="padding-bottom-xxs">
+							<h1 class="text-lg text-xxl@md font-bold">{{ product.title }}</h1>
+						</div>
+						<div class="flex items-center padding-bottom-md padding-bottom-md@md">
+							<p class="text-xl color-primary">{{ product.price | money }}</p>
+						</div>
+						{% form 'product', product, data-product-form: '', data-product-handle: product.handle,
+						data-enable-history-state: 'true' %}
+
+
+						{% if product.options.size > 1 %}
+						...
+						<input type="radio" v-model="form.id" id="variant_id" value="{{ variant.id }}" name="id" {% if
+							variant.id==product.selected_or_first_available_variant.id %} checked{% endif %}>
+						<label>{{ variant.title }} for {{ product.price | minus: variant.price | money_with_currency
+							}}</label>
+
+						...
+						{% else %}
+						<input type="hidden" name="id" v-model="form.id" id="variant_id"
+							value="{{ product.selected_or_first_available_variant.id }}">
+						{% endif %}
+
+						<div class="flex flex-column flex-row@sm gap-xxs js-product-v3__cta padding-top-0@md">
+							<div class="number-input number-input--v2 js-number-input display@md" id="counter">
+								<input class="form-control js-number-input__value " type="number" v-model="form.quantity"
+									name="qty-input-2" id="qty-input-2" min="0" max="10" step="1">
+								<button class="reset number-input__btn number-input__btn--plus " aria-label="Increase Number"
+									type="button" @click="incrementValue">
+									<svg class="icon" viewBox="0 0 12 12" aria-hidden="true">
+										<path d="M11,5H7V1A1,1,0,0,0,5,1V5H1A1,1,0,0,0,1,7H5v4a1,1,0,0,0,2,0V7h4a1,1,0,0,0,0-2Z" />
+									</svg>
+								</button>
+								<button class="reset number-input__btn number-input__btn--minus " aria-label="Decrease Number"
+									type="button" @click="decrementValue">
+									<svg class="icon" viewBox="0 0 12 12" aria-hidden="true">
+										<path d="M11,7H1A1,1,0,0,1,1,5H11a1,1,0,0,1,0,2Z" />
+									</svg>
+								</button>
+							</div>
+							<a class="btn  btn--primary flex-grow" aria-controls="cart-drawer" @click="addToCart" id="kec" name="add">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									class="margin-right-xxs">
+									<title>Dodaj u korpu</title>
+									<g>
+										<path fill="#ffffff"
+											d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19zM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74A3.007 3.007 0 0 0 3.92 3H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7zM16.5 19a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5z">
+										</path>
+									</g>
+								</svg>
+								Dodaj u korpu </a>
+						</div>
+
+						{% endform %}
+
+						<div class="text-component padding-top-sm padding-top-md@md padding-bottom-xs padding-bottom-sm@md">
+							<div class="flex">
+								<img src="{{ 'dostava.svg' | asset_url }}" class="icon--md" alt="" style="margin-right: 1rem;">
+								<p class="margin-bottom-0">Besplatna isporuka se vrši na teritoriji Srbije, Crne Gore, Hrvatske i Bosne
+									i Hercegovine, a za ostatak sveta dostava se naplaćuje 8 eura.</p>
+							</div>
+						</div>
+
+						<div class="text-component">
+							{{ product.description }}
+						</div>
+
+						<div class="padding-top-xs padding-top-sm@md">
+							<div class="parent grid gap-xs grid-md@md items-baseline">
+								<div class="col-6 col-3@md">
+									<div class="grid text-center">
+										<div class="col-12">
+											<img src="{{ 'icon-01.svg' | asset_url }}" class="icon--xxl hover:scale" alt="Image description">
+										</div>
+										<div class="col-12">
+											<p class="text-sm@md color-primary-dark">Prirodni sastojci</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-6 col-3@md">
+									<div class="grid text-center">
+										<div class="col-12">
+											<img src="{{ 'icon-02.svg' | asset_url }}" class="icon--xxl hover:scale" alt="Image description">
+										</div>
+										<div class="col-12">
+											<p class="text-sm@md color-primary-dark">Pogodno za osetljive zube i desni
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-6 col-3@md">
+									<div class="grid text-center">
+										<div class="col-12">
+											<img src="{{ 'icon-03.svg' | asset_url }}" class="icon--xxl hover:scale" alt="Image description">
+										</div>
+										<div class="col-12">
+											<p class="text-sm@md color-primary-dark">Klinički testirano</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-6 col-3@md">
+									<div class="grid text-center">
+										<div class="col-12">
+											<img src="{{ 'icon-04.svg' | asset_url }}" class="icon--xxl hover:scale" alt="Image description">
+										</div>
+										<div class="col-12">
+											<p class="text-sm@md color-primary-dark">Naučno dokazana PAP formula</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						{% comment %} START Accordion {% endcomment %}
+						<div class="parent grid-sm padding-top-sm padding-top-md@md">
+							<ul class="accordion-v2 flex flex-column gap-xxxs js-accordion" data-animation="on" data-multi-items="on"
+								data-version="v2">
+
+								<li class="accordion-v2__item bg shadow-sm radius-md  js-accordion__item">
+									<button class="reset accordion-v2__header padding-y-sm padding-x-md js-tab-focus" type="button">
+										<span class="">Kako olovka radi</span>
+
+										<svg class="icon accordion-v2__icon-arrow no-js:is-hidden" viewBox="0 0 16 16" aria-hidden="true">
+											<g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="square"
+												stroke-miterlimit="10">
+												<path d="M2 2l12 12" />
+												<path d="M14 2L2 14" />
+											</g>
+										</svg>
+									</button>
+
+									<div class="accordion-v2__panel js-accordion__panel">
+										<div class="text-component padding-top-xxxs padding-x-md padding-bottom-md">
+											<p class="">HelloSmile olovka za izbeljivanje zuba dizajnirana je kao
+												pogodno rešenje za
+												svakodnevno izbeljivanje. Kratkim vremenom nanošenja i prenosnim
+												dizajnom, možete da očistite
+												mrlje sa površine zuba čak i kada niste kod kuće.
+												<br><br>
+												HelloSmile olovka sadrži 2ml gela što je dovoljno za 30+ nanošenja, u
+												zavisnosti koliko gela
+												nanesete svaki put. Preporučujemo da gel ostavite na zubima oko 20
+												minuta, nakon toga
+												jednostavno isperite usta vodom.
+											</p>
+										</div>
+									</div>
+								</li>
+
+								<li class="accordion-v2__item bg shadow-sm radius-md  js-accordion__item">
+									<button class="reset accordion-v2__header padding-y-sm padding-x-md js-tab-focus" type="button">
+										<span class="">Šta je to novo u vezi HelloSmile olovke?</span>
+
+										<svg class="icon accordion-v2__icon-arrow no-js:is-hidden" viewBox="0 0 16 16" aria-hidden="true">
+											<g class="icon__group" fill="none" stroke="currentColor" stroke-linecap="square"
+												stroke-miterlimit="10">
+												<path d="M2 2l12 12" />
+												<path d="M14 2L2 14" />
+											</g>
+										</svg>
+									</button>
+
+									<div class="accordion-v2__panel js-accordion__panel">
+										<div class="text-component padding-top-xxxs padding-x-md padding-bottom-md">
+											<p class="">Uložili smo dosta vremena, truda i znanja kako bismo vam
+												predstavili savršen
+												proizvod koji je pogodan za korišćenje i kod osetljivih zuba i desni.
+												Formula bez peroksida,
+												sačinjena od vitamina i minerala, izbeljuje zube, činećih ih jačim i
+												zdravijim.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						{% comment %} END Accordion {% endcomment %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% comment %}START Premium {% endcomment %}
+	<div class="bg-white padding-top-lg padding-top-xxl@md">
+
+		<div class="immerse-section-tr padding-top-xs js-immerse-section-tr">
+			<div class="immerse-section-tr__media js-immerse-section-tr__media">
+				<div class="container max-width-sm">
+					<!-- asset visible on small devices -->
+					<figure
+						class="immerse-section-tr__figure immerse-section-tr__figure--3-4 hide@sm js-immerse-section-tr__figure">
+						{% comment %}<video src="{{ 'immersive-section-transition-video-1.mp4' | asset_url }}" autoplay loop muted{%
+							endcomment %} {% comment %}playsInline></video>{% endcomment %}
+						<img src="{{ 'hello-smile-olovka-sto-mobile.jpg' | asset_url }}" class="width-100%" alt="">
+					</figure>
+					<!-- asset visible on bigger devices -->
+					<figure
+						class="immerse-section-tr__figure immerse-section-tr__figure--16-9 display@sm js-immerse-section-tr__figure">
+						{% comment %}<video src="{{ 'immersive-section-transition-video-2.mp4' | asset_url }}" autoplay loop muted{%
+							endcomment %} {% comment %}playsInline></video>{% endcomment %}
+						<img loading="lazy" data-src="{{ 'hello-smile-olovka-sto.jpg' | asset_url }}"
+							src="{{ 'hello-smile-olovka-sto.jpg' | asset_url }}" class="width-100%" alt="">
+					</figure>
+				</div>
+			</div>
+
+			<section class="immerse-section-tr__content bg-transparent margin-top-lg js-immerse-section-tr__content">
+				<!-- your content here -->
+
+				<div class="container max-width-adaptive-sm margin-bottom-xxl margin-bottom-xxxl@md">
+					<div class="text-component line-height-lg v-space-md padding-top-lg padding-top-0@md">
+						<h1 class="text-xl text-xxl@md font-bold">Premium kvalitet</h1>
+						<p class="text-md text-lg@md">Koristimo isključivo prirodne sastojke, vitamine i minerale, koji
+							na
+							neinvazivan način izbeljuju zube.
+							Pažljivo odabrani sastojci omogućavaju korišćenje i kod osetljivih zuba i
+							desni.
+							Klinički testirano i naučno dokazano da naša PAP formula čini vaše zube beljim
+							i jačim.</p>
+					</div>
+				</div>
+
+				{% comment %} START Section 1 {% endcomment %}
+				<section class="padding-y-md padding-y-xxl@md position-relative z-index-1 bg-gradient-primary">
+					<div class="container max-width-adaptive-md position-relative z-index-2 color-white">
+						<div class="grid gap-md">
+							<div class="col-9@md">
+								<h2 class="text-lg text-xl@md font-bold letter-spacing-sm padding-bottom-sm width-70%@md color-white">
+									Jutro može da počne bas ovako: Nabaci osmeh na lice i iskoristi dan za uživanje!
+								</h2>
+								<ol class="list list--ol">
+									<li>Operi zube</li>
+									<li>Pokreni mehanizam na olovci</li>
+									<li>U tankom sloju nanesi gel na zube</li>
+									<li>Drži širok osmeh jedan minut</li>
+									<li>Narednih 30 minuta ne konzumiraj hranu, piće i cigarete</li>
+								</ol>
+								<div class="text-component margin-top-md">
+									<p class="opacity-70% text-sm">Ponavljaj ovih nekoliko koraka 14 dana do savršenog
+										osmeha!</p>
+								</div>
+							</div>
+							<div class="col-3@md">
+								<div class="demo-scroll-fx-grid position-relative position-absolute@md">
+									<img loading="lazy" class="flex width-10% width-100%@md margin-x-auto scroll-fx js-scroll-fx"
+										data-scroll-fx="translateY, 100px, -200px, 0%, 100%"
+										data-src="{{ 'olovka-transform.png' | asset_url }}" src="{{ 'olovka-transform.png' | asset_url }}"
+										alt="Image description">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<figure class="bg-decoration z-index-1 radius-md" aria-hidden="true">
+						<svg class="bg-decoration__svg color-contrast-low" viewBox="0 0 1920 450" fill="none">
+							<circle class="blend-overlay" opacity="0.5" cx="1745" cy="159" r="175"
+								fill="url(#bg-decoration-v1-fx-4-radial-1)" />
+							<circle opacity="0.5" r="65" transform="matrix(-1 0 0 1 240 110)"
+								fill="url(#bg-decoration-v1-fx-4-radial-2)" />
+							<g opacity="0.5" filter="url(#bg-decoration-v1-fx-4-filter-1)">
+								<circle r="26" transform="matrix(-1 0 0 1 298 386)" fill="var(--color-primary)" />
+							</g>
+							<circle class="blend-overlay" opacity="0.5" cx="1470" cy="-299" r="439"
+								fill="url(#bg-decoration-v1-fx-4-radial-3)" />
+							<defs>
+								<filter id="bg-decoration-v1-fx-4-filter-1" x="267" y="355" width="62" height="62"
+									filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix" />
+									<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+									<feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur" />
+								</filter>
+								<radialGradient id="bg-decoration-v1-fx-4-radial-1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+									gradientTransform="translate(1745 159) rotate(90) scale(175)">
+									<stop stop-color="var(--color-primary)" stop-opacity="0" />
+									<stop offset="1" stop-color="var(--color-primary)" />
+								</radialGradient>
+								<radialGradient id="bg-decoration-v1-fx-4-radial-2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+									gradientTransform="scale(65)">
+									<stop stop-color="var(--color-accent)" stop-opacity="0" />
+									<stop offset="1" stop-color="var(--color-accent)" />
+								</radialGradient>
+								<radialGradient id="bg-decoration-v1-fx-4-radial-3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+									gradientTransform="translate(1470 -299) rotate(90) scale(439)">
+									<stop stop-color="var(--color-accent)" stop-opacity="0" />
+									<stop offset="1" stop-color="var(--color-accent)" />
+								</radialGradient>
+							</defs>
+						</svg>
+					</figure>
+				</section>
+
+				{% comment %} Section 2 {% endcomment %}
+				<section class="padding-y-md padding-y-xxl@md position-relative z-index-1 bg-gradient-white">
+					<div class="container max-width-adaptive-md position-relative">
+						<div class="grid gap-md">
+							<div class="col-5@md order-2 order-1@md">
+								<div class="demo-scroll-fx-grid position-relative position-absolute@md">
+									<img loading="lazy" class="flex width-50% width-100%@md margin-x-auto scroll-fx js-scroll-fx"
+										data-scroll-fx="translateY, 100px, -200px, 0%, 100%"
+										data-src="{{ 'olovka3-transform.png' | asset_url }}" src="{{ 'olovka3-transform.png' | asset_url }}"
+										alt="Image description">
+								</div>
+							</div>
+
+							<div class="col-7@md order-1 order-2@md">
+								<div class="text-component">
+									<h2 class="text-lg text-xl@md font-bold letter-spacing-sm padding-bottom-sm">Tri
+										aktivna sastojka koja
+										štite i izbeljuju
+										zube</h2>
+									<p>Od aktivnih sastojaka HelloSmile olovka sadrži minerale koji na najsigurniji i
+										najefikasniji način
+										izbeljuju i jačaju zube, bez bola i osetljivosti.<br><br>
+										Kombinovali smo efekte proverenih sastojaka PAP-a, hidroksiapatita i kalijum
+										nitrarta koji bez
+										pojave preosetljivosti zuba i iritacije desni izbeljuju zube.</p>
+								</div>
+								<ul class="list list--ul margin-top-sm">
+									<li>Formula bez peroksida</li>
+									<li>Bez bola i osetljivosti</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+					<figure class="bg-decoration z-index-1" aria-hidden="true">
+						<svg class="bg-decoration__svg color-contrast-low" viewBox="0 0 1920 450" fill="none">
+							<rect opacity="0.5" x="1350" y="-137.009" width="363.982" height="509.072"
+								transform="rotate(-30 1350 -137.009)" fill="url(#bg-decoration-v1-fx-3-linear-1)" />
+							<rect opacity="0.5" x="1152" y="-232.009" width="363.982" height="509.072"
+								transform="rotate(-30 1152 -232.009)" fill="url(#bg-decoration-v1-fx-3-linear-2)" />
+							<rect opacity="0.5" x="1065" y="-301.009" width="363.982" height="509.072"
+								transform="rotate(-30 1065 -301.009)" fill="url(#bg-decoration-v1-fx-3-linear-3)" />
+							<g opacity="0.5" filter="url(#bg-decoration-v1-fx-3-blur-1)">
+								<path d="M1297 87.5346L1356.34 51.8093L1344.53 99.3439L1297 87.5346Z" fill="currentColor" />
+							</g>
+							<defs>
+								<filter id="bg-decoration-v1-fx-3-blur-1" x="1292" y="35" width="69.3439" height="69.3439"
+									filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix" />
+									<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+									<feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur" />
+								</filter>
+								<linearGradient id="bg-decoration-v1-fx-3-linear-1" x1="1531.99" y1="-137.009" x2="1531.99" y2="372.063"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="currentColor" />
+									<stop offset="1" stop-color="currentColor" stop-opacity="0" />
+								</linearGradient>
+								<linearGradient id="bg-decoration-v1-fx-3-linear-2" x1="1333.99" y1="-232.009" x2="1333.99" y2="277.063"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="currentColor" />
+									<stop offset="1" stop-color="currentColor" stop-opacity="0" />
+								</linearGradient>
+								<linearGradient id="bg-decoration-v1-fx-3-linear-3" x1="1246.99" y1="-301.009" x2="1246.99" y2="208.063"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="currentColor" />
+									<stop offset="1" stop-color="currentColor" stop-opacity="0" />
+								</linearGradient>
+								<radialGradient id="bg-decoration-v1-fx-3-radial-1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+									gradientTransform="translate(1473 78) rotate(90) scale(36)">
+									<stop stop-color="var(--color-primary)" stop-opacity="0" />
+									<stop offset="1" stop-color="var(--color-primary)" />
+								</radialGradient>
+								<linearGradient id="bg-decoration-v1-fx-3-linear-4" x1="1452.38" y1="248.511" x2="1721.41" y2="315.277"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="currentColor" />
+									<stop offset="1" stop-color="currentColor" stop-opacity="0" />
+								</linearGradient>
+							</defs>
+						</svg>
+					</figure>
+				</section>
+
+				{% comment %} Section 3 {% endcomment %}
+				<section class="padding-y-md padding-y-xxl@md position-relative bg-gradient-primary">
+					<div class="container max-width-adaptive-md position-relative color-white">
+						<div class="grid gap-md">
+							<div class="col-8@md">
+								<div class="text-component line-height-md">
+									<h2 class="text-lg text-xl@md font-bold letter-spacing-sm padding-bottom-sm color-white">
+										Prednosti olovke za izbeljivanje zuba</h2>
+									<ol class="list list--ol color-white">
+										<li class="text-md font-bold text-bg-fx text-bg-fx--scale-x color-white margin-bottom-xxxs">
+											Kompaktna i dizajnirana tako da je možete
+											poneti bilo gde
+										</li>
+										<li class="text-md font-bold text-bg-fx text-bg-fx--scale-x color-white margin-bottom-xxxs">
+											Lako staje u džep ili torbu
+										</li>
+										<li class="text-md font-bold text-bg-fx text-bg-fx--scale-x color-white margin-bottom-xxxs">
+											Dopire i do najteže dostupnih mesta
+										</li>
+									</ol>
+								</div>
+							</div>
+							<div class="col-4@md">
+								<div class="demo-scroll-fx-grid position-relative position-absolute@md">
+									<img loading="lazy" class="flex width-50% width-100%@md margin-x-auto scroll-fx js-scroll-fx"
+										data-scroll-fx="translateY, 100px, -200px, 0%, 100%"
+										data-src="{{ 'olovka4-transform.png' | asset_url }}" src="{{ 'olovka4-transform.png' | asset_url }}"
+										alt="Image description">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<figure class="bg-decoration z-index-1" aria-hidden="true">
+						<svg class="bg-decoration__svg color-contrast-low" viewBox="0 0 1920 450" fill="none">
+							<rect opacity="0.5" x="1952.45" y="45.1172" width="175.38" height="1451.58"
+								transform="rotate(99.6416 1952.45 45.1172)" fill="url(#bg-decoration-v1-fx-6-linear-1)" />
+							<circle opacity="0.5" r="38" transform="matrix(-1 0 0 1 1583 171)"
+								fill="url(#bg-decoration-v1-fx-6-radial-1)" />
+							<path opacity="0.5" d="M1338 187L1679.53 -0.113281L1416.47 -78.0066L1338 187Z"
+								fill="url(#bg-decoration-v1-fx-6-linear-2)" />
+							<path opacity="0.5" d="M1683.59 291L1612.88 413.475L1709.47 387.593L1683.59 291Z"
+								fill="url(#bg-decoration-v1-fx-6-linear-3)" />
+							<defs>
+								<linearGradient id="bg-decoration-v1-fx-6-linear-1" x1="2040.14" y1="45.1172" x2="2040.14" y2="1496.7"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="currentColor" stop-opacity="0" />
+									<stop offset="1" stop-color="currentColor" />
+								</linearGradient>
+								<radialGradient id="bg-decoration-v1-fx-6-radial-1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+									gradientTransform="scale(38)">
+									<stop stop-color="var(--color-primary)" stop-opacity="0" />
+									<stop offset="1" stop-color="var(--color-primary)" />
+								</radialGradient>
+								<linearGradient id="bg-decoration-v1-fx-6-linear-2" x1="1640.29" y1="132.39" x2="1377.23" y2="54.4967"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="currentColor" />
+									<stop offset="1" stop-color="currentColor" stop-opacity="0" />
+								</linearGradient>
+								<linearGradient id="bg-decoration-v1-fx-6-linear-3" x1="1599.94" y1="365.178" x2="1696.53" y2="339.296"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="currentColor" />
+									<stop offset="1" stop-color="currentColor" stop-opacity="0" />
+								</linearGradient>
+							</defs>
+						</svg>
+					</figure>
+				</section>
+
+			</section>
+		</div>
+	</div>
+
+	<section class="products-gallery margin-top-xxl@md margin-top-md">
+		<div class="container max-width-adaptive-lg">
+			<div class="margin-bottom-xs margin-bottom-md@md">
+				<div class="flex justify-center items-end justify-between@md">
+					<h2 class="text-xl text-xxl@md">Slični proizvodi</h2>
+					<a href="/products/" class="btn btn--subtle display@md" role="text">Pogledaj sve <i
+							class="sr-only">proizvode</i></a>
+				</div>
+			</div>
+
+			<div class="grid gap-sm">
+				<div class="prod-card-v2 col-4@md">
+
+					<a href="/products/duo-paket-olovke" class="prod-card-v2__img-link hover:elevate"
+						aria-label="Description of the link">
+						<figure class="media-wrapper media-wrapper--4:5">
+							<img loading="lazy" data-src="{{ 'duo-01.jpg' | asset_url }}" src="{{ 'duo-01.jpg' | asset_url }}"
+								alt="Product preview image">
+						</figure>
+					</a>
+
+					<div class="padding-xs text-center">
+						<h2 class="text-lg@md"><a href="/products/duo-paket-olovke" class="product-card-v2__title">HelloSmile Duo
+								Set</a></h2>
+
+						<div class="margin-top-xxxs margin-bottom-xs">
+							<span class="prod-card-v2__price">3,790.00 RSD</span>
+						</div>
+						<a class="add-duo-olovka-preporuka btn btn--accent block text-center" @click="addDuoOlovkaPreporuka()"
+							aria-controls="cart-drawer-1">Dodaj u
+							korpu</a>
+					</div>
+				</div>
+				<div class="prod-card-v2 col-4@md">
+
+					<a href="/products/2duo-olovka" class="prod-card-v2__img-link hover:elevate"
+						aria-label="Description of the link">
+						<figure class="media-wrapper media-wrapper--4:5">
+							<img loading="lazy" data-src="{{ '5-olovke-01.jpg' | asset_url }}"
+								src="{{ '5-olovke-01.jpg' | asset_url }}" alt="Product preview image">
+						</figure>
+					</a>
+
+					<div class="padding-xs text-center">
+						<h2 class="text-lg@md"><a href="/products/2duo-olovka" class="product-card-v2__title">
+								Family Pack
+							</a></h2>
+
+						<div class="margin-top-xxxs margin-bottom-xs">
+							<span class="prod-card-v2__price">8,490.00 RSD</span>
+						</div>
+						<a class="duo-paket-olovke-preporuka btn btn--accent block text-center"
+							@click="addDuoPaketOlovkePreporuka()">Dodaj u
+							korpu</a>
+					</div>
+				</div>
+				<div class="prod-card-v2 col-4@md">
+					<span class="prod-card-v2__badge radius-md" role="text">Novo <i class="sr-only">product</i></span>
+
+					<a href="/products/duo-pro-ugalj" class="prod-card-v2__img-link hover:elevate"
+						aria-label="Description of the link">
+						<figure class="media-wrapper media-wrapper--4:5">
+							<img loading="lazy" data-src="{{ 'pro-duo-ugalj-01.jpg' | asset_url }}"
+								src="{{ 'pro-duo-ugalj-01.jpg' | asset_url }}" alt="Product preview image">
+						</figure>
+					</a>
+
+					<div class="padding-xs text-center">
+						<h2 class="text-lg@md"><a href="/products/duo-pro-ugalj" class="product-card-v2__title">
+								Premium paket
+							</a></h2>
+
+						<div class="margin-top-xxxs margin-bottom-xs">
+							<span class="prod-card-v2__price">9,790.00 RSD</span>
+						</div>
+						<a class="duo-pro-ugalj-preporuka btn btn--accent block text-center" @click="addDuoProUgaljPreporuka()"
+							aria-controls="cart-drawer-1">Dodaj u
+							korpu</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	{% section 'nasmejani-korisnici' %}
+
+</section>
+
+{% section 'popout-kupovina' %}

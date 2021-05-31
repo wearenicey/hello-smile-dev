@@ -1,0 +1,166 @@
+<!-- {% if cart.item_count > 0 %}
+<h1>cart</h1>
+<form action="/cart" method="post" class="cart-form" novalidate>
+  <table>
+    <thead>
+      <th colspan="2">Prod</th>
+      <th>Price</th>
+      <th>Qty</th>
+      <th>total</th>
+    </thead>
+    <tbody>
+      <template v-if="cart">
+        <template v-for="item in cart.items">
+          ${item.title}
+
+          ${item.price | money }
+
+          <template v-if="item.image">
+            <a :href="item.url">
+              <img class="" :src="item.image" alt="">
+            </a>
+          </template>
+
+          <tr>
+            <td>
+              <a href="{{ item.url | within: collections.all }}">
+                <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+              </a>
+            </td>
+            <td>
+              <a href="{{ item.url }}">{{ item.product.title }}</a>
+              {{ item.variant.title }}
+              <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">remove</a>
+            </td>
+            <td>{{ item.price | money }}</td>
+            <td>
+              <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">
+
+
+            </td>
+            <td>
+              {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
+              {{ item.line_price | money }}
+              {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
+            </td>
+          </tr>
+
+        </template>
+      </template>
+
+
+    </tbody>
+  </table>
+  <div>
+    <p>sub total : {{ cart.total_price | money }}</p>
+    <button type="submit" name="update" hidden>Update</button>
+    <button type="submit" name="checkout">Checkout</button>
+
+  </div>
+</form>
+{% else %}
+<h2>cart</h2>
+Cart is empty
+{% endif %} -->
+
+{% if cart.item_count > 0 %}
+
+<section class="cart">
+  <div class="container max-width-adaptive-lg padding-y-lg">
+    <div class="margin-bottom-lg text-center">
+      <h1>Vaša Korpa</h1>
+    </div>
+
+    <form action="/cart" method="post" class="cart-form" novalidate>
+      <div class="grid gap-md">
+
+        <div class="col-8@md">
+          <template v-if="cart">
+            <template v-for="item in cart.items">
+              <!-- cart products 👇 -->
+              <ol class="margin-bottom-xs" aria-label="Products in your cart">
+
+
+                <li class="cart__product flex padding-y-sm">
+                  <div class="cart__product-img margin-right-sm">
+                    <template v-if="item.image">
+                      <a :href="item.url">
+                        <img class="" :src="item.image" alt="">
+                      </a>
+                    </template>
+                  </div>
+
+                  <div class="cart__product-info">
+                    <div class="text-component v-space-sm">
+                      <h2 class="text-md"> ${item.title}
+                      </h2>
+                    </div>
+
+                    <div class="cart__product-tot">
+                      <div class="select cart__select width-50%">
+                        <input @change="updateCart()" type="number" class="form-control eventBtn" name="updates[]"
+                          :id="'updates_'+item.key" v-model="item.quantity" min="1"
+                          aria-label="{{ 'cart.general.item_quantity' | t }}" style="max-width: calc(100% + 20px);">
+                        <!-- <select class="select__input form-control" name="updates[]" id="updates_{{ item.key }}"
+                      value="{{ item.quantity }}" min="0">
+                      <option value="0">1</option>
+                      <option value="1">2</option>
+                      <option value="2">3</option>
+                    </select> -->
+
+                      </div>
+                    </div>
+
+                    <p class="text-md"><span class="sr-only">Price:</span>${total_price(item) | money}</p>
+                    <a href="#" @click="deleteFromCart()">Izbaci</a>
+
+                  </div>
+
+                </li>
+
+
+
+              </ol>
+            </template>
+          </template>
+
+        </div>
+
+        <div class="col-4@md">
+          <!-- cart subtotal 👇 -->
+          <div class="cart__subtotal">
+            <div class="flex justify-between">
+              <p>Ukupno:</p>
+              <p class="font-bold" v-if='cart'>${ cart_total_price | money }</p>
+            </div>
+            <a href="/checkout" class="btn btn--primary btn--md width-100% margin-y-xs">Poruči
+              &rarr;</a>
+            <p class="color-contrast-medium text-sm text-center display@md">Isporuka i PDV su uračunati u cenu
+            </p>
+            <p class="text-center margin-top-sm">
+              <label for='terms'>
+
+                Saglasan sam sa
+                <a href="/pages/opsti-uslovi">uslovima korišćenja</a> online prodavnice
+              </label>
+            </p>
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+
+  </div>
+  {% else %}
+  <div class="container max-width-adaptive-lg padding-y-xl">
+    <div class="margin-bottom-lg text-center">
+
+      <h2>Vasa Korpa</h2>
+      <p>Vasa korpa je prazna</p>
+    </div>
+  </div>
+
+  {% endif %}
+
+</section>

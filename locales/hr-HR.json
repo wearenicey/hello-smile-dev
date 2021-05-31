@@ -1,0 +1,144 @@
+{
+  "shopify": {
+    "checkout": {
+      "general": {
+        "cart": "Korpa",
+        "back_to_cart": "Nazad na korpu",
+        "continue_to_review": "Pogledaj porudžbinu",
+        "complete_purchase_button_label": "Završi kupovinu",
+        "all_rights_reserved": "Sva prava zadržava {{ shop_name }}\n"
+      },
+      "stock": {
+        "items_unavailable_notice": "Neki artikli više nisu dostupni. Tvoja korpa je ažurirana.\n"
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Korpa je ažurirana u skladu s tvojom državom dostave.\n"
+      },
+      "customer_account": {
+        "save_my_information_label": "Sačuvaj informacije za sledeću kupovinu."
+      },
+      "thank_you": {
+        "order_status_updates_with_email": "Dobijaćeš ćeš novosti o dostavi i isporuci e-poštom.\n",
+        "cancelled_page_title": "Porudžbina je otkazana",
+        "thank_you_title": "Tvoja porudžbina je potvrđena\n",
+        "confirmed_title": "Tvoja porudžbina je potvrđena\n",
+        "non_shippable_title": "Tvoja porudžbina je završena\n",
+        "cancelled_title": "Tvoja porudžbina je otkazana\n",
+        "out_for_delivery_local_title": "Tvoja porudžbina je spremna za isporuku\n",
+        "delivered_local_title": "Tvoja porudžbina je isporučena\n",
+        "thank_you_confirmed_order_with_email_payment": "Porudžbina  je plaćena {{ date }}.",
+        "thank_you_confirmed_order_with_phone_payment": "Porudžbina  je plaćena {{ date }}.",
+        "thank_you_confirmed_order_with_email_and_phone_payment": "Porudžbina  je plaćena {{ date }}.",
+        "order_status_confirmed_order_with_email_payment": "Porudžbina  je plaćena {{ date }}.",
+        "login_reorder_link_text": {
+          "few": "Porudžbina  je plaćena {{ date }}."
+        },
+        "order_status_confirmed_order_with_phone_payment": "Porudžbina  je plaćena {{ date }}.",
+        "order_status_confirmed_order_with_email_and_phone_payment": "Porudžbina  je plaćena {{ date }}.",
+        "title": "Hvala na kupovini!",
+        "return_to_store_link_label": "Nastavi sa kupovinom",
+        "order_updates_title": "Novosti o porudžbini"
+      },
+      "order_summary": {
+        "order_name_label": "Porudžbina {{ name }}",
+        "no_pickup_location": " Tvoja porudžbina nije dostupna za preuzimanje. Unesi adresu za dostavu.\n",
+        "subtotal_label": "Međuzbir",
+        "apply_discount_button_label": "Primeni ",
+        "shipping_default_value": "Izračunava se u sledećem koraku\n",
+        "product_change_label": "Promeni",
+        "expand_order_summary": "Prikaži celu porudžbinu",
+        "collapse_order_summary": "Sakrij celu porudžbinu",
+        "title": "Sažetak porudžbine",
+        "shopping_cart_label": "Korpa",
+        "applied_discount_message": "{{ amount }} popusta na ukupnu cenu porudžbine",
+        "discount_already_applied": "Na porudžbinu je primenjen popust. Ne možete dodati još jedan popust.",
+        "cart_does_not_meet_discount_requirements_notice": "Kod za popust <strong>{{ code }}<\/strong> ne vredi za artikle u tvojoj korpi",
+        "cost_table_title": "Sažetak cene",
+        "price_label": "Cena",
+        "total_updated_label": "Ažurirana ukupna cena:",
+        "estimated_tax_label": "Procena poreza",
+        "applied_free_shipping_discount_label": "Primenjeno",
+        "original_price": "Izvorna cena",
+        "sale_price": "Prodajna cena"
+      },
+      "payment": {
+        "free_order_notice_html": "Tvoja je porudžbina  <strong>besplatna<\/strong>. Plaćanje nije potrebno.\n",
+        "discount_button_action_label": "Primeni kod za popust",
+        "apply_gift_card_button_label": "Primeni ",
+        "card_change_label": "Promeni",
+        "card_security_notice": "Sve su transakcije sigurne i šifrovane.\n",
+        "card_information_notice": "Sve su transakcije sigurne i šifrovane. Informacije o kreditnim karticama nikada se ne čuvaju.\n",
+        "card_security_vault_notice": "Potrebni su nam tvoji podaci za buduća plaćanja. Sve su transakcije sigurne i šifrovane.\n",
+        "billing_address_description": "Izaberi adresu povezanu s tvojom karticom ili načinom plaćanja.\n\n"
+      },
+      "processing": {
+        "wait": {
+          "short": "Tvoja  porudžbina se  obrađuje.\n",
+          "long": "Dobit ćeš poruku e-pošte čim se tvoja porudžbina obradi. Količina narudžbi trenutačno je vrlo velika.\n"
+        },
+        "you_will_not_be_charged": "Naplata se još neće sprovesti\n",
+        "complete_your_purchase_title": "Završi kupovinu"
+      },
+      "failed_payment": {
+        "return_to_cart_button_label": "Nazad na korpu",
+        "payment_not_processed_text": " Ništa ti nije naplaćeno. Nazad na korpu i završi kupovinu.\n"
+      },
+      "field_errors": {
+        "handle_email_invalid": "Unesi ispravnu adresu e-pošte\n",
+        "email_invalid": "Unesi ispravnu adresu e-pošte\n",
+        "handle_phone_invalid": "Unesi ispravan broj telefona\n"
+      },
+      "payment_errors": {
+        "order_total_changed": "Ukupan se iznos porudžbine promenio. Osveži korpu i pokušaj ponovo.\n"
+      },
+      "review": {
+        "blocks": {
+          "change_shipping_method_link_label": "Promeni način dostave",
+          "change_payment_method_link_label": "Promeni način plaćanja",
+          "change_link_label": "Promeni",
+          "change_contact_method_link_label": "Promeni informacije za kontakt\n",
+          "change_billing_address_link_label": "Promeni adresu za naplatu\n",
+          "change_shipping_address_link_label": "Promeni adresu za dostavu\n"
+        },
+        "title": "Pogledaj",
+        "review_title": "Pogledaj porudžbinu"
+      },
+      "change_currency": {
+        "change_currency_link": "Promeni u {{ currency_name }}\n"
+      },
+      "contact": {
+        "phone_tooltip": "U slučaju da te trebamo kontaktirati u vezi sa porudžbinom"
+      },
+      "shipping": {
+        "subscription_delivery_description": {
+          "first_n_order_free": {
+            "one": "Prva porudžbina je besplatna",
+            "other": "Sljedeći broj prvih porudžbina: {{ count }} besplatan je",
+            "few": "Sljedeći broj prvih porudžbina: {{ count }} besplatan je"
+          },
+          "free_for_first_n_order": {
+            "one": "Za prvu porudžbinu",
+            "other": "Za sljedeći broj prvih porudžbina: {{ count }}",
+            "few": "Za sljedeći broj prvih porudžbina: {{ count }}"
+          }
+        }
+      }
+    },
+    "notices": {
+      "cart": {
+        "changed": "Korpa je promenjena",
+        "items_changed": "Neki su se artikli promenili.\n"
+      },
+      "order": {
+        "not_available": "Ta porudžbina nije dostupna",
+        "cancel_reason": {
+          "customer": "Kupac je promenio\/otkazao porudžbinu\n"
+        }
+      }
+    },
+    "page_titles": {
+      "shopping_cart": "Vaša korpa",
+      "order": "Porudžbina  {{ name }}"
+    }
+  }
+}

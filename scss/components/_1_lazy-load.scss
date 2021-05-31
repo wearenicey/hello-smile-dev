@@ -1,0 +1,7 @@
+html:not(.js) { // hide lazy loading content if JavaScript is disabled
+  [loading="lazy"][data-src],
+  [loading="lazy"][data-srcset],
+  picture[loading="lazy"] {
+    display: none;
+  }
+}

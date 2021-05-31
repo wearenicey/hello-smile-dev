@@ -1,0 +1,37 @@
+{
+  "name": "hellosmile",
+  "version": "1.0.1",
+  "description": "",
+  "keywords": [
+    "shopify",
+    "hello",
+    "smile"
+  ],
+  "scripts": {
+    "gulp": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicey Consulting <office@nicey.rs>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.4.3",
+    "browser-sync": "^2.26.3",
+    "codyhouse-framework": "^2.8.2",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-uglify": "^3.0.2",
+    "laravel-mix": "^6.0.13",
+    "postcss": "^8.1.14",
+    "postcss-calc": "^7.0.1",
+    "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables"
+  },
+  "homepage": "thehellosmile.rs",
+  "dependencies": {
+    "vue": "^2.6.12"
+  }
+}

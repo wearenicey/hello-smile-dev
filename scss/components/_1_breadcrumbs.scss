@@ -1,0 +1,7 @@
+.breadcrumbs {}
+
+.breadcrumbs__item {
+  display: inline-block; // flex fallback
+  display: inline-flex;
+  align-items: center;
+}

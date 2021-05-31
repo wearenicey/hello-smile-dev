@@ -1,0 +1,77 @@
+:root {
+  // radius
+  --radius: 0.25em; // border radius base size
+  // 👇 uncomment to modify default radius values
+   --radius-sm: calc(var(--radius)/2);
+   --radius-md: var(--radius);
+   --radius-lg: calc(var(--radius)*2);
+   --radius-xl: calc(var(--radius)*4);
+
+  // box shadow - 👇 uncomment to modify default shadow values
+   --shadow-xs:  0 2px 3px rgba(0, 0, 0, 0.06),
+                 0 0 1px rgba(0, 0, 0, 0.08)
+                 0 0 1px rgba(0, 0, 0, 0.08);
+   --shadow-sm:  0 0 1px rgba(0, 0, 0, 0.04),
+                 0 2px 6px rgba(0, 0, 0, 0.04),
+                 0 10px 20px rgba(0, 0, 0, 0.04);
+   --shadow-md:  0 0 1px rgba(0, 0, 0, 0.04),
+                 0 2px 6px rgba(0, 0, 0, 0.03),
+                 0 16px 24px rgba(0, 0, 0, 0.06);
+   --shadow-lg:  0 0 1px rgba(0, 0, 0, 0.04),
+                 0 4px 8px rgba(0, 0, 0, 0.02),
+                 0 16px 24px rgba(0, 0, 0, 0.04),
+                 0 24px 32px -1px rgba(0, 0, 0, 0.04);
+   --shadow-xl:  0 8px 16px rgba(0, 0, 0, 0.02),
+                 0 32px 32px -2px rgba(0, 0, 0, 0.02),
+                 0 64px 64px rgba(0, 0, 0, 0.04);
+}
+
+// --------------------------------
+
+// (START) Global editor code
+
+// --------------------------------
+
+.hover\:elevate {
+  box-shadow: var(--shadow-xs);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-xl);
+  }
+}
+
+.hover\:scale {
+  transition: all 0.3s var(--ease-out-back);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.hover\:reduce-opacity {
+  opacity: 1;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// text styles
+.link-subtle {
+  color: var(--color-contrast-high);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+// --------------------------------
+
+// (END) Global editor code
+
+// --------------------------------
